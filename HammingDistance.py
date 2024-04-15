@@ -1,4 +1,4 @@
-def hammingDistance(n) :
+def hammingDistance(n):
  
     #x = n1 ^ n2 
     #setBits = 0
