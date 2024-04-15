@@ -1,16 +1,30 @@
-def hammingDistance(n1, n2) :
+def hammingDistance(n) :
  
-    x = n1 ^ n2 
-    setBits = 0
+    #x = n1 ^ n2 
+    #setBits = 0
  
-    while (x > 0) :
-        setBits += x & 1
-        x >>= 1
+    #while (x > 0) :
+        #setBits += x & 1
+        #x >>= 1
      
-    return setBits 
+    #return setBits 
+    max = 0
+    min = 16
+    for i in range(len(n)):
+        for j in range(i, len(n)):
+            x = n[i] ^ n[j] 
+            setBits = 0
  
+            while (x > 0) :
+                setBits += x & 1
+                x >>= 1
+     
+            if(setBits>max):
+                max = setBits
+            elif(setBits<min):
+                min = setBits 
+    return max, min
 if __name__=='__main__':
-    n1 = 9
-    n2 = 14
-    print(hammingDistance(9, 14))
+    n = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(hammingDistance(n))
  
