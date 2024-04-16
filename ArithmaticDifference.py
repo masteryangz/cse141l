@@ -4,11 +4,11 @@ def arithmaticDifference(n):
     for i in range(len(n)):
         for j in range(i+1, len(n)):
             setBits = n[i] + (~n[j] + 1)
-            if(setBits<0):
+            if setBits<0:
                 setBits = -setBits
-            if(setBits>max):
+            if setBits>max:
                 max = setBits
-            elif(setBits<min):
+            elif setBits<min:
                 min = setBits 
     return max, min
 

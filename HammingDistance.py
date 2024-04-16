@@ -15,13 +15,13 @@ def hammingDistance(n):
             x = n[i] ^ n[j] 
             setBits = 0
  
-            while (x > 0) :
+            while x > 0:
                 setBits += x & 1
                 x >>= 1
      
-            if(setBits>max):
+            if setBits>max:
                 max = setBits
-            elif(setBits<min):
+            elif setBits<min:
                 min = setBits 
     return max, min
 if __name__=='__main__':
