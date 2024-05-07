@@ -1,11 +1,11 @@
-// program counter
-// supports both relative and absolute jumps
-// use either or both, as desired
-module PC #(parameter D=9)(
-  input reset,					// synchronous reset
-        clk,
-		    reljump_en,             // rel. jump enable
-        absjump_en,				// abs. jump enable
+// next PC
+
+module nextPC #(parameter D=9)(
+  input start,
+        start_addr,
+        branch,
+        raken,
+        target
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
