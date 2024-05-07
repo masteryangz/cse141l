@@ -16,14 +16,14 @@ module DUT(
 // instantiate data memory
   dat_mem dm(
     .clk,
-	.wen,
+	  .wen,
     .addr,
     .dat_in,
     .dat_out);
 
   always_ff @(posedge clk)
     if(start) prog_ct <= 'd0;
-	else      prog_ct <= prog_ct + 'd1;
+	  else      prog_ct <= prog_ct + 'd1;
 
 
 // drive from either program counter (easy) or 
