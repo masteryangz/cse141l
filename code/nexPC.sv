@@ -2,18 +2,17 @@
 
 module nextPC #(parameter D=9)(
   input start,
-        start_addr,
         branch,
-        raken,
-        target
+        taken,
+  input       [D-1:0] start_address,
   input       [D-1:0] target,	// how far/where to jump
   output logic[D-1:0] prog_ctr
 );
 
-  always_ff @(posedge clk)
-    if(reset) prog_ctr <= '0;
-	  else if(reljump_en) prog_ctr <= prog_ctr + target;
-    else if(absjump_en) prog_ctr <= target;
-	  else prog_ctr <= prog_ctr + 'b1;
+always_comb begin
+  if(start) prog_ctr = start_address;
+	else if(branch && taken) prog_ctr = target;
+  else prog_ctr = prog_ctr+1;
+end
 
 endmodule
