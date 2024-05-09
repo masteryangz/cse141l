@@ -17,7 +17,8 @@ Instructions:
 - and: can be replaced by xor if necessary
 - xor: bitwise xor
 - ld: load an intermediate to a reg
-- beq:
+- beq: take branch when operand==0
+- pos: taken branch when operand>0
 - lw: load from memory at reg
 - st: store to memory at reg
  
