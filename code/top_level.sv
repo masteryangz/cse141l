@@ -2,7 +2,7 @@
 module top_level(
   input        clk, reset, req, 
   output logic done);
-  parameter D = 9,             // program counter width
+  parameter D = 12,             // program counter width
     A = 3;             		  // ALU command bit width
   wire[D-1:0] target, 			  // jump 
               prog_ctr;
@@ -24,6 +24,7 @@ module top_level(
   wire[A-1:0] alu_cmd;
   wire[8:0]   mach_code;          // machine code
   wire[2:0] rd_addrA, rd_adrB;    // address pointers to reg_file
+  logic[1:0] how_high;
 // fetch subassembly
   PC #(.D(D)) 					  // D sets program counter width
      pc1 (.reset            ,
@@ -46,6 +47,7 @@ module top_level(
   Control ctl1(.instr(),
   .RegDst  (), 
   .Branch  (relj)  , 
+  .how_high ,
   .MemWrite , 
   .ALUSrc   , 
   .RegWrite   ,     

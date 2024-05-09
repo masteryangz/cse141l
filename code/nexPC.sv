@@ -1,6 +1,6 @@
 // next PC
 
-module nextPC #(parameter D=9)(
+module nextPC #(parameter D=12)(
   input start,
         branch,
         taken,
