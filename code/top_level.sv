@@ -48,8 +48,8 @@ module top_level(
         .target,
         .prog_ctr_in);
 // contains machine code
-  instr_ROM ir1(.prog_ctr,
-               .mach_code);
+  instr_ROM ir1(.prog_ctr_out,
+                .mach_code);
 
 // control decoder
   Control ctl1(
