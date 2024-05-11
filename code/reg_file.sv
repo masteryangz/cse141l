@@ -1,6 +1,6 @@
 // cache memory/register file
 // default address pointer width = 4, for 16 registers
-module reg_file #(parameter pw=4)(
+module reg_file #(parameter pw=3)(
   input[7:0] dat_in,
   input      clk,
   input      wr_en,           // write enable
@@ -18,8 +18,7 @@ module reg_file #(parameter pw=4)(
 
 // writes are sequential (clocked)
   always_ff @(posedge clk)
-    if(wr_en)				   // anything but stores or no ops
-      core[wr_addr] <= dat_in; 
+    if(wr_en) core[wr_addr] <= dat_in; 
 
 endmodule
 /*
