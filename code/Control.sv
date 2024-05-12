@@ -1,7 +1,7 @@
 // control decoder
 module Control #(parameter opwidth = 3)(
   input[opwidth-1:0] ALUOp,
-  output[1:0] how_high,
+  output[2:0] how_high,
   output logic RegDst, branch, 
      MemtoReg, MemWrite, ALUSrc, RegWrite,
 );

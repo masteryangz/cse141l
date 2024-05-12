@@ -1,13 +1,12 @@
 module PC_LUT #(parameter D=12)(
-  input               branch,
   input[2:0]          how_high,	   // target 4 values
   output logic[D-1:0] target);
 
-  always_comb case(addr)
+  always_comb case(how_high)
     0: target = -5;   // go back 5 spaces
-	1: target = 20;   // go ahead 20 spaces
-	2: target = '1;   // go back 1 space   1111_1111_1111
-	default: target = 'b0;  // hold PC  
+	  1: target = 20;   // go ahead 20 spaces
+	  2: target = '1;   // go back 1 space   1111_1111_1111
+	  default: target = 'b0;  // hold PC  
   endcase
 
 endmodule

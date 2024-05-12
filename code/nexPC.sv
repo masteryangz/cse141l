@@ -11,7 +11,7 @@ module nextPC #(parameter D=12)(
 
 always_comb begin
   if(start) prog_ctr_in = start_address;
-	else if(branch && taken) prog_ctr_in = target;
+	else if(branch && taken) prog_ctr_in = prog_ctr_in+target;
   else prog_ctr_in = prog_ctr_in+1;
 end
 

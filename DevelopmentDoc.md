@@ -13,8 +13,9 @@ Instructions:
 - total amount: 8 
 - namespace: 3 bits
 - add
+- and
 - shf: by default left shift
-- and: can be replaced by xor if necessary
+- nop: no operation
 - xor: bitwise xor
 - ld: load an intermediate to a reg
 - beq: take branch when operand==0
