@@ -4,31 +4,31 @@ module top_level(
   output logic done);
   parameter D = 12,                   // program counter width
             A = 3;             		    // ALU command bit width
-  logic[D-1:0] target, 			          // jump 
+  wire[D-1:0] target, 			          // jump 
               prog_ctr_in,
               prog_ctr_out;
-  logic        RegWrite;
-  logic[7:0]   datA,datB,		          // from RegFile
+  wire        RegWrite;
+  wire[7:0]   datA,datB,		          // from RegFile
               muxB, 
-			     rslt;                   // alu output
-  //logic       sc_in,   				        // shift/carry out from/to ALU
-  // 		     pariQ,              	  // registered parity flag from ALU
-  //		        zeroQ;                  // registered zero flag from ALU 
-  logic        branch,                 // from control to PC; relative jump enable
+			        rslt,                   // alu output
+              immed;
+  logic       sc_in,   				        // shift/carry out from/to ALU
+   		        pariQ,              	  // registered parity flag from ALU
+		          zeroQ;                  // registered zero flag from ALU 
+  wire        branch,                 // from control to PC; relative jump enable
               taken,
-              RegDst,
-              pari,
-		        sc_clr,
-		        sc_en,
+              RegDst;
+  wire        pari,
+		          sc_clr,
+		          sc_en,
               MemWrite,
               MemtoReg,
               ALUSrc;		              // immediate switch
-  logic[A-1:0] ALUOp;
-  logic[8:0]   mach_code;              // machine code
-  logic[2:0]   rd_addrA, rd_addrB;      // address pointers to reg_file
-  logic[2:0]   how_high;
+  wire[A-1:0] ALUOp;
+  wire[8:0]   mach_code;              // machine code
+  wire[2:0]   rd_addrA, rd_adrB;      // address pointers to reg_file
+  wire[2:0]   how_high;
   logic[D-1:0] start_address;
-  logic[7:0] dat_out;
   assign start_address = 0;
   assign rd_addrA = mach_code[2:0];
   assign rd_addrB = mach_code[5:3];
@@ -45,9 +45,9 @@ module top_level(
          .target          );   
 
   nextPC #(.D(D))
-    np (.start,
-        .branch,
-        .taken,
+    np (.start
+        .branch
+        .taken
         .start_address,
         .target,
         .prog_ctr_in);
@@ -65,8 +65,8 @@ module top_level(
   .ALUSrc   , 
   .RegWrite ,     
   .MemtoReg);
-  assign muxB = MemtoReg? dat_out : rslt;
-  reg_file #(.pw(3)) rf1(.dat_in(muxB),
+
+  reg_file #(.pw(3)) rf1(.dat_in(regfile_dat),
               .clk,
               .wr_en   (RegWrite),
               .rd_addrA(rd_addrA),
@@ -75,31 +75,31 @@ module top_level(
               .datA_out(datA),
               .datB_out(datB)); 
 
-
+  assign muxB = ALUSrc? immed : datB;
 
   alu alu1(.ALUOp,
            .inA(datA),
-		     .inB(muxB),
-		       //.sc_i(sc),   // output from sc register
-		     .rslt,
-		       //.sc_o,       // input to sc register
-		       //.pari,
+		       .inB(muxB),
+		       .sc_i(sc),   // output from sc register
+		       .rslt,
+		       .sc_o,       // input to sc register
+		       .pari,
            .taken);  
 
   dat_mem dm1(.dat_in(datB)  ,  // from reg_file
              .clk           ,
-			    .wr_en(MemWrite),  // stores
-			    .addr(datA),
-             .dat_out);
+			       .wr_en(MemWrite),  // stores
+			       .addr(datA),
+             .dat_out());
 
 // registered flags from ALU
   always_ff @(posedge clk) begin
-    //pariQ <= pari;
-	 //zeroQ <= zero;
-    //if(sc_clr) sc_in <= 'b0;
-    //else if(sc_en) sc_in <= sc_o;
+    pariQ <= pari;
+	  zeroQ <= zero;
+    if(sc_clr) sc_in <= 'b0;
+    else if(sc_en) sc_in <= sc_o;
   end
 
-  assign done = prog_ctr_out == 128;
+  assign done = prog_ctr == 128;
  
 endmodule

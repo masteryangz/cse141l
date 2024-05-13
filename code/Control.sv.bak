@@ -3,7 +3,8 @@ module Control #(parameter opwidth = 3)(
   input[opwidth-1:0] ALUOp,
   output[2:0] how_high,
   output logic RegDst, branch, 
-     MemtoReg, MemWrite, ALUSrc, RegWrite);
+     MemtoReg, MemWrite, ALUSrc, RegWrite,
+);
 
 always_comb begin
 // defaults
@@ -16,12 +17,11 @@ always_comb begin
   MemtoReg  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
 // sample values only -- use what you need
 case(ALUOp)    // override defaults with exceptions
-
-  'b0000:  begin					// store operation
-             MemWrite = 'b1;      // write to data mem
-             RegWrite = 'b0;      // typically don't also load reg_file
-			  end
 /*
+  'b0000:  begin					// store operation
+               MemWrite = 'b1;      // write to data mem
+               RegWrite = 'b0;      // typically don't also load reg_file
+			     end
   'b00001:  
   'b00010:  MemtoReg = 'b1;    //load 
 // ...

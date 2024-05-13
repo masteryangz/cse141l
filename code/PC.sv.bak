@@ -9,6 +9,6 @@ module PC #(parameter D=12)(
   output logic[D-1:0] prog_ctr_out
 );
 
-  always_ff @(posedge clk) prog_ctr_out <= prog_ctr_in;
+  always_ff @(posedge clk) rog_ctr_out <= prog_ctr_in;
 
 endmodule
