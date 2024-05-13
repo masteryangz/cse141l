@@ -9,16 +9,19 @@ module alu(
   // reduction XOR (output)
 	output logic taken     // NOR (output)
 );
-logic[inB-1:0] shift;
+//logic[inB-1:0] shift;
 always_comb begin 
   rslt = 'b0;            
   //sc_o = 'b0;    
   taken = 'b0;
   case(ALUOp)
+  /*
     3'b001: begin//lsf
 		  shift = inA[inB-1:0];
 		  rslt = {shift, inA[7:inB]};
 	  end
+*/
+    3'b001: rslt = inA >> inB;
 	  3'b011: //pos
 	    if(inA>0) taken = 1;
       /*begin

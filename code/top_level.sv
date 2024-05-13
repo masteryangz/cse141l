@@ -80,7 +80,7 @@ module top_level(
 
   alu alu1(.ALUOp,
            .inA(datA),
-		       .inB(muxB),
+		       .inB(datB),
 		       //.sc_i(sc),   // output from sc register
 		       .rslt,
 		       //.sc_o,       // input to sc register
