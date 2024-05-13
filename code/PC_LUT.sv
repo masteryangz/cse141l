@@ -1,12 +1,17 @@
-module PC_LUT #(parameter D=12)(
-  input[2:0]          how_high,	   // target 4 values
-  output logic[D-1:0] target);
+module PC_LUT #(parameter B=3)(
+  input[B:0]          how_high,	   // target 4 values
+  output logic[B+2:0] target);
 
   always_comb case(how_high)
-    0: target = -5;   // go back 5 spaces
-	  1: target = 20;   // go ahead 20 spaces
-	  2: target = '1;   // go back 1 space   1111_1111_1111
-	  default: target = 'b0;  // hold PC  
+    0: target = 2;   // go forward 2 spaces
+    1: target = -2;  // go back 2 spaces
+	2: target = 4;   
+	3: target = -4;
+	4: target = 8;
+	5: target = -8;
+	6: target = 16;
+	7: target = -16;
+	default: target = 'b0;  // hold PC  
   endcase
 
 endmodule

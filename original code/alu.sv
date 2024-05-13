@@ -18,7 +18,7 @@ always_comb begin
   case(alu_cmd)
     3'b000: // add 2 8-bit unsigned; automatically makes carry-out
       {sc_o,rslt} = inA + inB + sc_i;
-	3'b001: // left_shift
+	  3'b001: // left_shift
 	  {sc_o,rslt} = {inA, sc_i};
       /*begin
 		rslt[7:1] = ina[6:0];
