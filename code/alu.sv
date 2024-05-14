@@ -22,6 +22,7 @@ always_comb begin
 	  end
 */
     3'b001: rslt = inA >> inB;
+    3'b010: rslt = inA + inB;
 	  3'b011: //pos
 	    if(inA>0) taken = 1;
       /*begin
