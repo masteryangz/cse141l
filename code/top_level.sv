@@ -25,7 +25,7 @@ module top_level(
               ldImmed;		              // immediate switch
   logic[A-1:0] ALUOp;
   logic[8:0]   mach_code;              // machine code
-  logic[2:0]   rd_addrA, rd_addrB;      // address pointers to reg_file
+  logic[A-1:0]   rd_addrA, rd_addrB;      // address pointers to reg_file
   logic[2:0]   how_high;
   logic[2:0]   immed;
   logic[D-1:0] start_address;
@@ -43,7 +43,7 @@ module top_level(
           .prog_ctr_out     );
 
 // lookup table to facilitate jumps/branches
-  PC_LUT #(.D(D))
+  PC_LUT 
     pl1 (.how_high,
          .target          );   
 

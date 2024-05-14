@@ -16,15 +16,12 @@ always_comb begin
 case(ALUOp)    // override defaults with exceptions
 
   'b000:  ldImmed    = 'b1;
-  'b001:  
   'b010:  begin
             RegWrite = 'b0;
             MemtoReg = 'b0;
           end
   'b011:  branch     = 'b1;
-  'b100:
   'b101:  branch     = 'b1;
-  'b110:
   'b111:  begin
             MemWrite = 'b1;  
             RegWrite = 'b0;

@@ -1,6 +1,6 @@
-module PC_LUT #(parameter B=3)(
-  input[B:0]          how_high,	   // target 4 values
-  output logic[B+2:0] target);
+module PC_LUT #(parameter D=12)(
+  input[2:0]          how_high,	   // target 4 values
+  output logic[D-1:0] target);
 
   always_comb case(how_high)
     0: target = 2;   // go forward 2 spaces

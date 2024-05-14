@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top_level
-Sun May 12 23:35:36 2024
+Mon May 13 17:13:26 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -10,7 +10,22 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |top_level
+ 11. Parameter Settings for User Entity Instance: PC:pc1
+ 12. Parameter Settings for User Entity Instance: PC_LUT:pl1
+ 13. Parameter Settings for User Entity Instance: nextPC:np
+ 14. Parameter Settings for User Entity Instance: instr_ROM:ir1
+ 15. Parameter Settings for User Entity Instance: Control:ctl1
+ 16. Parameter Settings for User Entity Instance: reg_file:rf1
+ 17. Port Connectivity Checks: "nextPC:np"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +52,20 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sun May 12 23:35:36 2024           ;
+; Analysis & Synthesis Status        ; Successful - Mon May 13 17:13:26 2024       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; top_level                                   ;
 ; Top-level Entity Name              ; top_level                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 28                                          ;
+;     Total combinational functions  ; 28                                          ;
+;     Dedicated logic registers      ; 12                                          ;
+; Total registers                    ; 12                                          ;
+; Total pins                         ; 3                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -156,13 +171,224 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                               ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+; top_level.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv  ;         ;
+; reg_file.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv   ;         ;
+; PC_LUT.sv                        ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv     ;         ;
+; PC.sv                            ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv         ;         ;
+; nexPC.sv                         ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv      ;         ;
+; instr_ROM.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv  ;         ;
+; dat_mem.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv    ;         ;
+; Control.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv    ;         ;
+; alu.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv        ;         ;
+; mach_code.txt                    ; yes             ; Auto-Found File              ; C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.txt ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 28          ;
+;                                             ;             ;
+; Total combinational functions               ; 28          ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 3           ;
+;     -- 3 input functions                    ; 11          ;
+;     -- <=2 input functions                  ; 14          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 17          ;
+;     -- arithmetic mode                      ; 11          ;
+;                                             ;             ;
+; Total registers                             ; 12          ;
+;     -- Dedicated logic registers            ; 12          ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 3           ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; start~input ;
+; Maximum fan-out                             ; 22          ;
+; Total fan-out                               ; 100         ;
+; Average fan-out                             ; 2.17        ;
++---------------------------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+-------------+--------------+
+; |top_level                 ; 28 (4)              ; 12 (0)                    ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |top_level           ; top_level   ; work         ;
+;    |PC:pc1|                ; 0 (0)               ; 12 (12)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|PC:pc1    ; PC          ; work         ;
+;    |nextPC:np|             ; 24 (24)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top_level|nextPC:np ; nextPC      ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; nextPC:np|prog_ctr_in[0]                               ;    ;
+; nextPC:np|prog_ctr_in~21                               ;    ;
+; nextPC:np|prog_ctr_in~22                               ;    ;
+; nextPC:np|prog_ctr_in~23                               ;    ;
+; nextPC:np|prog_ctr_in~24                               ;    ;
+; nextPC:np|prog_ctr_in~25                               ;    ;
+; nextPC:np|prog_ctr_in~26                               ;    ;
+; nextPC:np|prog_ctr_in~27                               ;    ;
+; nextPC:np|prog_ctr_in~28                               ;    ;
+; nextPC:np|prog_ctr_in~29                               ;    ;
+; nextPC:np|prog_ctr_in~30                               ;    ;
+; nextPC:np|prog_ctr_in[11]                              ;    ;
+; Number of logic cells representing combinational loops ; 12 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 12    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |top_level ;
++----------------+-------+--------------------------------------------------+
+; Parameter Name ; Value ; Type                                             ;
++----------------+-------+--------------------------------------------------+
+; D              ; 12    ; Signed Integer                                   ;
+; A              ; 3     ; Signed Integer                                   ;
++----------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC:pc1 ;
++----------------+-------+----------------------------+
+; Parameter Name ; Value ; Type                       ;
++----------------+-------+----------------------------+
+; D              ; 12    ; Signed Integer             ;
++----------------+-------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PC_LUT:pl1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; D              ; 12    ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: nextPC:np ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; D              ; 12    ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: instr_ROM:ir1 ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; D              ; 12    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Control:ctl1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; opwidth        ; 3     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg_file:rf1 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; pw             ; 3     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------+
+; Port Connectivity Checks: "nextPC:np"           ;
++---------------+-------+----------+--------------+
+; Port          ; Type  ; Severity ; Details      ;
++---------------+-------+----------+--------------+
+; start_address ; Input ; Info     ; Stuck at GND ;
++---------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 3                           ;
+; cycloneiii_ff         ; 12                          ;
+;     plain             ; 12                          ;
+; cycloneiii_lcell_comb ; 28                          ;
+;     arith             ; 11                          ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 10                          ;
+;     normal            ; 17                          ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 12                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 3                           ;
+;                       ;                             ;
+; Max LUT depth         ; 3.10                        ;
+; Average LUT depth     ; 2.08                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Sun May 12 23:35:29 2024
+    Info: Processing started: Mon May 13 17:13:15 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off top_level -c top_level
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -184,13 +410,41 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: Control File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: alu File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv Line: 3
-Error (10734): Verilog HDL error at alu.sv(12): inB is not a constant File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv Line: 12
-Error (10734): Verilog HDL error at alu.sv(19): inB is not a constant File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv Line: 19
-Error (10734): Verilog HDL error at alu.sv(20): inB is not a constant File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv Line: 20
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4722 megabytes
-    Error: Processing ended: Sun May 12 23:35:36 2024
-    Error: Elapsed time: 00:00:07
-    Error: Total CPU time (on all processors): 00:00:11
+Info (12127): Elaborating entity "top_level" for the top level hierarchy
+Info (12128): Elaborating entity "PC" for hierarchy "PC:pc1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 43
+Info (12128): Elaborating entity "PC_LUT" for hierarchy "PC_LUT:pl1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 48
+Warning (10230): Verilog HDL assignment warning at PC_LUT.sv(7): truncated value with size 32 to match size of target (12) File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv Line: 7
+Warning (10230): Verilog HDL assignment warning at PC_LUT.sv(9): truncated value with size 32 to match size of target (12) File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv Line: 9
+Warning (10230): Verilog HDL assignment warning at PC_LUT.sv(11): truncated value with size 32 to match size of target (12) File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv Line: 11
+Warning (10230): Verilog HDL assignment warning at PC_LUT.sv(13): truncated value with size 32 to match size of target (12) File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv Line: 13
+Info (12128): Elaborating entity "nextPC" for hierarchy "nextPC:np" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 56
+Warning (10230): Verilog HDL assignment warning at nexPC.sv(15): truncated value with size 32 to match size of target (12) File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv Line: 15
+Info (12128): Elaborating entity "instr_ROM" for hierarchy "instr_ROM:ir1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 59
+Warning (10850): Verilog HDL warning at instr_ROM.sv(10): number of words (20) in memory file does not match the number of elements in the address range [0:4095] File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv Line: 10
+Warning (10030): Net "core.data_a" at instr_ROM.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv Line: 8
+Warning (10030): Net "core.waddr_a" at instr_ROM.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv Line: 8
+Warning (10030): Net "core.we_a" at instr_ROM.sv(8) has no driver or initial value, using a default initial value '0' File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv Line: 8
+Info (12128): Elaborating entity "Control" for hierarchy "Control:ctl1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 68
+Warning (10270): Verilog HDL Case Statement warning at Control.sv(16): incomplete case statement has no default case item File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv Line: 16
+Info (12128): Elaborating entity "reg_file" for hierarchy "reg_file:rf1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 78
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 88
+Warning (10270): Verilog HDL Case Statement warning at alu.sv(17): incomplete case statement has no default case item File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv Line: 17
+Info (12128): Elaborating entity "dat_mem" for hierarchy "dat_mem:dm1" File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv Line: 94
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276004): RAM logic "reg_file:rf1|core" is uninferred due to inappropriate RAM size File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv Line: 13
+    Info (276007): RAM logic "dat_mem:dm1|core" is uninferred due to asynchronous read logic File: C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv Line: 9
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "C:/Users/y1499/OneDrive/Desktop/cse141l/code/db/top_level.ram0_instr_ROM_8ff220a8.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 33 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 30 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 4775 megabytes
+    Info: Processing ended: Mon May 13 17:13:26 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 
