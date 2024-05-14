@@ -19,7 +19,8 @@ case(ALUOp)    // override defaults with exceptions
   'b011:  branch     = 'b1;
   'b101:  branch     = 'b1;
   'b111:  begin
-            MemWrite =
+            MemWrite = 'b1;
+            RegWrite = 'b0;
   end
 
 // ...
