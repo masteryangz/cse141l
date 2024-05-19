@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition"
 
-// DATE "05/13/2024 17:44:56"
+// DATE "05/13/2024 20:45:32"
 
 // 
 // Device: Altera EP4CE40F29C6 Package FBGA780
@@ -33,9 +33,9 @@ module top_level (
 	clk,
 	start,
 	done);
-input 	clk;
-input 	start;
-output 	done;
+input 	reg clk ;
+input 	reg start ;
+output 	logic done ;
 
 // Design Ports Information
 // done	=>  Location: PIN_A21,	 I/O Standard: 2.5 V,	 Current Strength: Default
