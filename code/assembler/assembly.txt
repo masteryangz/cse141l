@@ -1,0 +1,2 @@
+add r0 r1 r2#line1
+loadi r3 0100 #line2
