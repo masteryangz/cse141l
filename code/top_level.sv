@@ -66,8 +66,10 @@ module top_level(
   .ldImmed  , 
   .RegWrite ,     
   .MemtoReg);
+
   assign muxB = MemtoReg? dat_out : rslt;
   assign muxA = ldImmed? immed : muxB;
+  
   reg_file #(.pw(3)) rf1(.dat_in(muxA),
               .clk,
               .wr_en(RegWrite),

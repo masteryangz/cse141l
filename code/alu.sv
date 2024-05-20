@@ -15,7 +15,7 @@ always_comb begin
   //sc_o = 'b0;    
   taken = 'b0;
   case(ALUOp)
-  /*
+/*
     3'b001: begin//lsf
 		  shift = inA[inB-1:0];
 		  rslt = {shift, inA[7:inB]};
