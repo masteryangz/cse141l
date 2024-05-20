@@ -10,7 +10,7 @@ def hammingDistance(n):
     #return setBits 
     max = 0
     min = 16
-    for i in range(len(n)):
+    for i in range(len(n)-1):
         for j in range(i+1, len(n)):
             x = n[i] ^ n[j] 
             setBits = 0

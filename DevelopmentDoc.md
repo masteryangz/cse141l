@@ -15,7 +15,6 @@ Instructions:
 - add
 - and
 - shf: by default left shift
-- nop: no operation
 - xor: bitwise xor
 - ld: load an intermediate to a reg
 - beq: take branch when operand==0

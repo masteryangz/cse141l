@@ -10,12 +10,9 @@ def multiplication(n):
             setBits = 0
             multiplicant1 = copy.deepcopy(n[i])
             multiplicant2 = copy.deepcopy(n[j])
-            while(multiplicant2>0):
-                if multiplicant1 >= 0 and multiplicant2 >= 0:
-                    if multiplicant2 & 1 == 1:
-                        setBits+=multiplicant1
-                    multiplicant1 <<= 1
-                    multiplicant2 >>= 1
+            multiplicant2Copy = copy.deepcopy(n[j])
+            while(multiplicant2Copy>0):
+                
             result.append(setBits)
     return result
 
