@@ -13,6 +13,8 @@ always_comb begin
   RegWrite  =	'b1;   // 0: for store or no op  1: most other operations 
   MemtoReg  =	'b1;   // 1: load -- route memory instead of ALU to reg_file data in
 // sample values only -- use what you need
+
+//////////////// IMPORTANT: currently using LBD ISA ver 1.0////////////////////////
 case(ALUOp)    // override defaults with exceptions
 
   'b000:  ldImmed    = 'b1;

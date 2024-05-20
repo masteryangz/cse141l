@@ -13,19 +13,27 @@ import sys
 
 # map registers to binary
 registers_two_bit = {
-    "r0": "00",
-    "r1": "01",
-    "r2": "10",
-    "r3": "11",
+    "r0": "000",
+    "r1": "001",
+    "r2": "010",
+    "r3": "011",
+    "r4": "100",
+    "r5": "101",
+    "r6": "110",
+    "r7": "111",
     }
 
 # map opcode to binary
 # NOTE: THIS WILL BE DIFFERENT FOR YOU!
 opcode = {
-    "add": "000",
-    "sub": "001",
-    "loadi": "010",
-    "beq": "011",
+    "ld": "000",
+    "rst": "001",
+    "add": "010",
+    "pos": "011",
+    "xor": "100",
+    "jmp": "101",
+    "lw": "110",
+    "st": "111"
     }
 
 # classify instructions into different types
