@@ -11,8 +11,6 @@ def multiplication(n):
             multiplicant1 = copy.deepcopy(n[i])
             multiplicant2 = copy.deepcopy(n[j])
             multiplicant2Copy = copy.deepcopy(n[j])
-            while(multiplicant2Copy>0):
-                
             result.append(setBits)
     return result
 

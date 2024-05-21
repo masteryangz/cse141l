@@ -38,8 +38,8 @@ opcode = {
 
 # classify instructions into different types
 # NOTE: THIS WILL BE DIFFERENT FOR YOU!
-rtype = ['add', 'pos', 'xor', 'lw', 'sw']
-itype = ['ld','rst', 'jmp']
+#rtype = ['add', 'pos', 'xor', 'lw', 'sw']
+itype = ['ld','rst', 'jmp', 'add', 'pos', 'xor', 'lw', 'sw']
 
 
 # NOTE: THIS WILL BE DIFFERENT FOR YOU!
@@ -87,9 +87,10 @@ with (
         writeline += registers_two_bit[inst[1]]
 
         # if it's r-type or b-type, then you know you have 2 args after (this might be different for you)
-        if inst[0] in rtype:
-            writeline += registers_two_bit[inst[2]]
-        elif inst[0] in itype:
+        #if inst[0] in rtype:
+        #    writeline += registers_two_bit[inst[2]]
+        #elif inst[0] in itype:
+        if inst[0] in itype:
             # immediate just goes straight in
             writeline += inst[2]
 
