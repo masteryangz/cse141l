@@ -2,8 +2,8 @@
 110000111 //r0 = 64
 110001111 //r1 = 64
 111010111 //max(mem[64]) = 0
-0010001 //r0 = 32
-0010001 //r0 = 16
+001000001 //r0 = 32
+001000001 //r0 = 16
 010111110 //r7 = 65
 111000111 //min(mem[65]) = 16
 010111110 //r7 = 66
@@ -27,7 +27,7 @@
 010011111 //r3 = len(n)-2-i
 010111110 //r7 = len(n)-1
 010111110 //r7 = len(n)
-1010116 //for i in range(len(n)-1)
+101011110 //for i in range(len(n)-1)
 010111110 //r7 = len(n)+1
 010111110 //r7 = len(n)+2
 110011111 //r3 = 0
@@ -43,11 +43,11 @@
 010111101 //r7 = len(n)-1
 010100111 //r4 = len(n)-1-j
 010111110 //r7 = len(n)
-1011004 //for j in range(i+1, len(n))
+101100100 //for j in range(i+1, len(n))
 110100010 //load mem[i] into r4
 110000011 //load mem[j] into r0
 100100000 //x(r4) = n[i]^n[j]
-1011002 //while x>0
+101100010 //while x>0
 010111110 //r7 = len(n)+1
 010111110 //r7 = len(n)+2
 010111110 //r7 = len(n)+3
@@ -55,7 +55,7 @@
 111100111 //store x into mem[68]
 110000111 //load x into r0
 010001000 //setBits(r1) = r1+r0
-0011001 //arithmetic right shift x by 1
+001100001 //arithmetic right shift x by 1
 010111101 //r7 = 67
 110000111 //r0 = 64
 010111101 //r7 = len(n)+2
@@ -63,10 +63,10 @@
 010111101 //r7 = len(n)
 010000000 //r0 = 10000000
 100000101 //r0 = 011111111
-1011013 //jump back to while loop
+101101011 //jump back to while loop
 010011110 //j+=1
 010011110 //j+=1
-1011015 //jump back to j for loop
+101101101 //jump back to j for loop
 010010110 //i+=1
 010010110 //i+=1
-1011017 //jump back to i for loop
+101101111 //jump back to i for loop

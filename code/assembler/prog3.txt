@@ -2,8 +2,8 @@ sw r7 r7              #mem[64] = 64
 lw r0 r7              #r0 = 64
 lw r1 r7              #r1 = 64
 sw r2 r7              #max(mem[64]) = 0
-rst r0 1              #r0 = 32
-rst r0 1              #r0 = 16
+rst r0 001            #r0 = 32
+rst r0 001            #r0 = 16
 add r7 r6             #r7 = 65
 sw r0 r7              #min(mem[65]) = 16
 add r7 r6             #r7 = 66
@@ -27,7 +27,7 @@ add r7 r5             #r7 = len(n)-2
 add r3 r7             #r3 = len(n)-2-i
 add r7 r6             #r7 = len(n)-1
 add r7 r6             #r7 = len(n)
-jmp r3 6              #for i in range(len(n)-1)
+jmp r3 110            #for i in range(len(n)-1)
 add r7 r6             #r7 = len(n)+1
 add r7 r6             #r7 = len(n)+2
 lw r3 r7              #r3 = 0
@@ -43,11 +43,11 @@ add r7 r5             #r7 = len(n)
 add r7 r5             #r7 = len(n)-1
 add r4 r7             #r4 = len(n)-1-j
 add r7 r6             #r7 = len(n)
-jmp r4 4              #for j in range(i+1, len(n))
+jmp r4 100            #for j in range(i+1, len(n))
 lw r4 r2              #load mem[i] into r4
 lw r0 r3              #load mem[j] into r0
 xor r4 r0             #x(r4) = n[i]^n[j]
-jmp r4 2              #while x>0
+jmp r4 010            #while x>0
 add r7 r6             #r7 = len(n)+1
 add r7 r6             #r7 = len(n)+2
 add r7 r6             #r7 = len(n)+3
@@ -55,7 +55,7 @@ add r7 r6             #r7 = len(n)+4
 sw r4 r7              #store x into mem[68]
 lw r0 r7              #load x into r0
 add r1 r0             #setBits(r1) = r1+r0
-rst r4 1              #arithmetic right shift x by 1
+rst r4 001            #arithmetic right shift x by 1
 add r7 r5             #r7 = 67
 lw r0 r7              #r0 = 64
 add r7 r5             #r7 = len(n)+2
@@ -63,10 +63,10 @@ add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
 add r0 r0             #r0 = 10000000
 xor r0 r5             #r0 = 011111111
-jmp r5 3              #jump back to while loop
+jmp r5 011            #jump back to while loop
 add r3 r6             #j+=1
 add r3 r6             #j+=1
-jmp r5 5              #jump back to j for loop
+jmp r5 101            #jump back to j for loop
 add r2 r6             #i+=1
 add r2 r6             #i+=1
-jmp r5 7              #jump back to i for loop
+jmp r5 111            #jump back to i for loop
