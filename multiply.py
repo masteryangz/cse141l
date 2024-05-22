@@ -36,3 +36,7 @@ def multiply(multiplicant, multiplier, signExtend_subtract):
         if(signExtend_subtract & 0b10): #if signExtend bit is on
             multiplicant[7] = 1
     return multiplicant, multiplier
+
+if __name__=='__main__':
+    n = [1, 5, 1, 2, 3]
+    print(doublePrecisionMult(n))
