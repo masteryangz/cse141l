@@ -15,10 +15,10 @@ module DUT(
 
 // instantiate data memory
   dat_mem dm(
-    .clk,
-	  .wen,
-    .addr,
     .dat_in,
+    .clk,
+	  .wr_en(wen),
+    .addr,
     .dat_out);
 
   always_ff @(posedge clk)

@@ -10,11 +10,15 @@ module test_bench;
   logic[ 4:0] Min1, Min2;	 	// addresses of pair w/ smallest Hamming distance
   logic[ 4:0] Max1, Max2;		// addresses of pair w/ largest Hamming distance
   logic[15:0] Tmp[32];		    // cache of 16-bit values assembled from data_mem
-
+/*
   DUT D1(.clk  (clk  ),	        // your design goes here
 		 .start(start),
 		 .done (done )); 
-
+*/
+  top_level D1(
+    .clk
+    .start
+    .done);
   always begin
     #50ns clk = 'b1;
 	#50ns clk = 'b0;
@@ -34,9 +38,11 @@ module test_bench;
       $display("%d:  %b",i,Tmp[i]);
 	end
 // TODO: delete DUT data memory preloads beyond [63] (next 3 lines of code)
+/*
     D1.dm.core[64] = 'd16;		             // preset DUT final Min to max possible
     for(int r=65; r<256; r++)
 	  D1.dm.core[r] = 'd0;		             // preset DUT final Max to min possible 
+    */
 // 	compute correct answers
     for(int j=0; j<32; j++) begin
       for(int k=j+1; k<32; k++) begin
