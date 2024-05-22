@@ -11,6 +11,15 @@ module reg_file #(parameter pw=3)(
                     datB);
 
   logic[7:0] core[2**pw];    // 2-dim array  8 wide  16 deep
+  assign core[0] = 0;
+  assign core[1] = 0;
+  assign core[2] = 0;
+  assign core[3] = 0;
+  assign core[4] = 0;
+  assign core[5] = -1;
+  assign core[6] = 1;
+  assign core[7] = 64;
+  
 
 // reads are combinational
   assign datA = core[rd_addrA];
