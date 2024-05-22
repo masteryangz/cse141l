@@ -96,12 +96,14 @@ module top_level(
              .dat_out);
 
 // registered flags from ALU
+/*
   always_ff @(posedge clk) begin
     //pariQ <= pari;
 	 //zeroQ <= zero;
     //if(sc_clr) sc_in <= 'b0;
     //else if(sc_en) sc_in <= sc_o;
   end
+  */
 
   assign done = prog_ctr_out == 128;
  
