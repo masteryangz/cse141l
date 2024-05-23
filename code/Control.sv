@@ -10,7 +10,7 @@ always_comb begin
   branch 	  = 'b0;   // 1: branch (jump)
   MemWrite  =	'b0;   // 1: store to memory
   ldImmed	  =	'b0;   // 1: immediate  0: second reg file output
-  RegWrite  =	'b1;   // 0: for store or no op  1: most other operations 
+  RegWrite  =	'b1;   // 0: for store or jump  1: most other operations 
   MemtoReg  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
 // sample values only -- use what you need
 
@@ -18,8 +18,14 @@ always_comb begin
 case(ALUOp)    // override defaults with exceptions
 
   'b000:  ldImmed    = 'b1;
-  'b011:  branch     = 'b1;
-  'b101:  branch     = 'b1;
+  'b011:  begin
+            branch   = 'b1;
+            RegWrite = 'b0; 
+  end
+  'b101:  begin
+            branch   = 'b1;
+            RegWrite = 'b0;
+  end
   'b110:  MemtoReg   = 'b1;
   'b111:  begin
             MemWrite = 'b1;
