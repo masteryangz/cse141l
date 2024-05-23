@@ -31,8 +31,8 @@ module top_level(
   logic[D-1:0] start_address;
   logic[7:0] dat_out;
   assign start_address = 0;
-  assign rd_addrA = mach_code[2:0];
-  assign rd_addrB = mach_code[5:3];
+  assign rd_addrB = mach_code[2:0];
+  assign rd_addrA = mach_code[5:3];
   assign ALUOp = mach_code[8:6];
   assign immed = mach_code[2:0];
   assign how_high = mach_code[2:0];

@@ -21,7 +21,9 @@ always_comb begin
 		  rslt = {shift, inA[7:inB]};
 	  end
 */
-    3'b001: rslt = inA >> inB;
+    3'b000: //ld
+      rslt = inA;
+    3'b001: rslt = inA >> 1;
     3'b010: rslt = inA + inB;
 	  3'b011: //pos
 	    if(inA>0) taken = 1;
@@ -34,6 +36,10 @@ always_comb begin
 	    rslt = inA ^ inB;
 	  3'b101: //beq
 	    if(inA==0) taken = 1;
+    3'b110: //lw
+      rslt = inB;
+    3'b111: //sw
+      rslt = inA;
   endcase
 end
    
