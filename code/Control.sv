@@ -11,7 +11,7 @@ always_comb begin
   MemWrite  =	'b0;   // 1: store to memory
   ldImmed	  =	'b0;   // 1: immediate  0: second reg file output
   RegWrite  =	'b1;   // 0: for store or no op  1: most other operations 
-  MemtoReg  =	'b1;   // 1: load -- route memory instead of ALU to reg_file data in
+  MemtoReg  =	'b0;   // 1: load -- route memory instead of ALU to reg_file data in
 // sample values only -- use what you need
 
 //////////////// IMPORTANT: currently using LBD ISA ver 1.0////////////////////////
@@ -20,6 +20,7 @@ case(ALUOp)    // override defaults with exceptions
   'b000:  ldImmed    = 'b1;
   'b011:  branch     = 'b1;
   'b101:  branch     = 'b1;
+  'b110:  MemtoReg   = 'b1;
   'b111:  begin
             MemWrite = 'b1;
             RegWrite = 'b0;

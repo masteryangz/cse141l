@@ -23,7 +23,7 @@ always_comb begin
 */
     3'b000: //ld
       rslt = inA;
-    3'b001: rslt = inA >> 1;
+    3'b001: rslt = inA >>> 1;
     3'b010: rslt = inA + inB;
 	  3'b011: //pos
 	    if(inA>0) taken = 1;
