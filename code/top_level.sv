@@ -89,7 +89,7 @@ module top_level(
 		       //.pari,
            .taken);  
 
-  dat_mem dm(.dat_in(datB)  ,  // from reg_file
+  dat_mem dm(.dat_in(datA)  ,  // from reg_file
              .clk           ,
 			       .wr_en(MemWrite),  // stores
 			       .addr(rslt),

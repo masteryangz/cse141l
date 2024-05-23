@@ -39,7 +39,7 @@ always_comb begin
     3'b110: //lw
       rslt = inB;
     3'b111: //sw
-      rslt = inA;
+      rslt = inB;
   endcase
 end
    
