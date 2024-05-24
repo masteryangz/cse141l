@@ -4,13 +4,13 @@ module PC_LUT #(parameter D=12)(
 
   always_comb case(how_high)
     0: target = 2;   // go forward 2 spaces
-    1: target = -2;  // go back 2 spaces
-	2: target = 4;   
-	3: target = -4;
-	4: target = 8;
-	5: target = -8;
-	6: target = 16;
-	7: target = -16;
+    1: target = -10;  // go back 2 spaces
+	2: target = 10;   
+	3: target = -20;
+	4: target = 20;
+	5: target = -50;
+	6: target = 50;
+	7: target = -60;
 	default: target = 'b0;  // hold PC  
   endcase
 
