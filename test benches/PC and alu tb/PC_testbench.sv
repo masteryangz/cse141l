@@ -1,7 +1,6 @@
-module PC_testbench #(parameter D=12)
+module PC_testbench #(parameter D=12);
     logic clock, start, branch, taken;
-    logic[D-1:0] program_counter, next_program_counter, start_address;
-
+    logic[D-1:0] program_counter, next_program_counter, start_address, target;
 
     //initiat a PC
     PC PC1(
@@ -60,6 +59,8 @@ module PC_testbench #(parameter D=12)
 
         //back to normal
         start = 0;
+        #10
+        $stop;
         
     end
 
@@ -69,7 +70,7 @@ module PC_testbench #(parameter D=12)
 
 
     initial begin
-        $monitor(" time=%0t, clk=%b  pc=%d",$time, reset, clock, program_couter);
+        $monitor(" time=%0t, clk=%b  pc=%d",$time, start, clock, next_program_counter);
     end
 
 

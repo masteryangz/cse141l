@@ -38,7 +38,7 @@ inB = 'b10010000;
 ALUOp = 'b101;
 inA = 'b00000000;
 inB = 'b00000000;
-
+#10
 // terminate simulation
 $stop;
 end
