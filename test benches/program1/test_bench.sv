@@ -16,8 +16,8 @@ module test_bench;
 		 .done (done )); 
 */
   top_level D1(
-    .clk
-    .start
+    .clk,
+    .start,
     .done);
   always begin
     #50ns clk = 'b1;

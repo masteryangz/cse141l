@@ -1,0 +1,42 @@
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of mach_code.sv failed with 1 errors.
+# Compile of test_bench.sv failed with 1 errors.
+# 13 compiles, 2 failed with 2 errors.
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of mach_code.sv failed with 1 errors.
+# Compile of test_bench.sv was successful.
+# 13 compiles, 1 failed with 1 error.
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of mach_code.sv failed with 1 errors.
+# Compile of test_bench.sv was successful.
+# 13 compiles, 1 failed with 1 error.

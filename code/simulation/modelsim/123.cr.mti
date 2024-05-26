@@ -1,37 +1,20 @@
-C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module PC_LUT
-
-Top level modules:
-	PC_LUT
-
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv
+C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC
 
 Top level modules:
 	PC
 
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv {0 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module dat_mem
+** Error: (vlog-13069) C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv(1): near "111111111": syntax error, unexpected INTEGER NUMBER, expecting class.
 
-Top level modules:
-	dat_mem
-
-} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv}
+} {3.0 4.0} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC_testbench
 
 Top level modules:
 	PC_testbench
-
-} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module alu_tb
-
-Top level modules:
-	alu_tb
 
 } {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -40,12 +23,47 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	reg_file
 
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module instr_ROM
+-- Compiling module PC_LUT
 
 Top level modules:
-	instr_ROM
+	PC_LUT
+
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu
+
+Top level modules:
+	alu
+
+} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module test_bench
+
+Top level modules:
+	test_bench
+
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module nextPC
+
+Top level modules:
+	nextPC
+
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module dat_mem
+
+Top level modules:
+	dat_mem
+
+} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module alu_tb
+
+Top level modules:
+	alu_tb
 
 } {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -60,19 +78,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	top_level
-
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module nextPC
-
-Top level modules:
-	nextPC
-
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module alu
-
-Top level modules:
-	alu
 
 } {} {}}
