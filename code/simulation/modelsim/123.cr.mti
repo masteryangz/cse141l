@@ -5,11 +5,7 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	PC
 
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv {0 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-** Error: (vlog-13069) C:/Users/y1499/OneDrive/Desktop/cse141l/code/mach_code.sv(1): near "111111111": syntax error, unexpected INTEGER NUMBER, expecting class.
-
-} {3.0 4.0} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv}
+} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv}
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module PC_testbench
 
@@ -43,6 +39,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	test_bench
+
+} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module instr_ROM
+
+Top level modules:
+	instr_ROM
 
 } {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
