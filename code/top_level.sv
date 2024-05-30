@@ -53,6 +53,7 @@ module top_level(
         .taken,
         .start_address,
         .target,
+        .prog_ctr_out,
         .prog_ctr_in);
 // contains machine code
   instr_ROM ir1(.prog_ctr_out,

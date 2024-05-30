@@ -14,6 +14,7 @@ module PC_testbench #(parameter D=12);
         .taken(taken),
         .start_address(start_address),
         .target(target),
+        .prog_ctr_out(program_counter),
         .prog_ctr_in(next_program_counter)
     );
 

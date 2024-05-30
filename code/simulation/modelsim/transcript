@@ -9,37 +9,8 @@
 # Compile of top_level.sv was successful.
 # Compile of alu_tb.sv was successful.
 # Compile of PC_testbench.sv was successful.
-# Compile of mach_code.sv failed with 1 errors.
-# Compile of test_bench.sv failed with 1 errors.
-# 13 compiles, 2 failed with 2 errors.
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of mach_code.sv failed with 1 errors.
 # Compile of test_bench.sv was successful.
-# 13 compiles, 1 failed with 1 error.
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of mach_code.sv failed with 1 errors.
-# Compile of test_bench.sv was successful.
-# 13 compiles, 1 failed with 1 error.
+# 12 compiles, 0 failed with no errors.
 # Compile of alu.sv was successful.
 # Compile of Control.sv was successful.
 # Compile of dat_mem.sv was successful.
@@ -55,7 +26,7 @@
 # 12 compiles, 0 failed with no errors.
 vsim -gui work.test_bench
 # vsim -gui work.test_bench 
-# Start time: 13:42:39 on May 26,2024
+# Start time: 13:30:15 on May 30,2024
 # Loading sv_std.std
 # Loading work.test_bench
 # Loading work.top_level
@@ -105,6 +76,384 @@ run -all
 #          30:  0110001001100011
 #          31:  1000011100001010
 # Break key hit
-# Break in Module dat_mem at C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv line 15
-# End time: 14:16:45 on May 26,2024, Elapsed time: 0:34:06
-# Errors: 0, Warnings: 9
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 23
+quit -sim
+# End time: 13:38:32 on May 30,2024, Elapsed time: 0:08:17
+# Errors: 0, Warnings: 4
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 13:38:50 on May 30,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "mach_code.sv" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv(10)
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench/D1/ir1
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Break key hit
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 24
+quit -sim
+# End time: 13:42:00 on May 30,2024, Elapsed time: 0:03:10
+# Errors: 0, Warnings: 3
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 13:52:47 on May 30,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "mach_code.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv(10)
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench/D1/ir1
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Break key hit
+# Break in Module reg_file in file C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv
+quit -sim
+# End time: 14:44:15 on May 30,2024, Elapsed time: 0:51:28
+# Errors: 0, Warnings: 3
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 14:44:30 on May 30,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+# ** Warning: (vsim-7) Failed to open readmem file "C:Usersy1499OneDriveDesktopcse141lcodemach_code.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv(10)
+#    Time: 0 ps  Iteration: 0  Instance: /test_bench/D1/ir1
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Break key hit
+# Simulation stop requested.
+quit -sim
+# End time: 14:45:30 on May 30,2024, Elapsed time: 0:01:00
+# Errors: 0, Warnings: 3
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 14:45:44 on May 30,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# Break key hit
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 24
+add wave sim:/test_bench/*
+run -all
+# Break key hit
+# Simulation stop requested.
+add wave -position insertpoint  \
+sim:/test_bench/D1/done
+run -all
+# Break key hit
+# Simulation stop requested.
+add wave -position insertpoint  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+run -all
+# Break key hit
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 24
+quit -sim
+# End time: 14:59:01 on May 30,2024, Elapsed time: 0:13:17
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.PC_testbench
+# vsim -gui work.PC_testbench 
+# Start time: 14:59:20 on May 30,2024
+# Loading sv_std.std
+# Loading work.PC_testbench
+# Loading work.PC
+# Loading work.nextPC
+run -all
+#  time=0, clk=1  pc=0   0
+#  time=10, clk=0  pc=0   1
+#  time=50, clk=0  pc=0  16
+#  time=60, clk=0  pc=0   2
+#  time=70, clk=0  pc=0   1
+#  time=110, clk=1  pc=0 128
+#  time=120, clk=0  pc=0   1
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv(64)
+#    Time: 130 ps  Iteration: 0  Instance: /PC_testbench
+# Break in Module PC_testbench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv line 64
+quit -sim
+# End time: 14:59:44 on May 30,2024, Elapsed time: 0:00:24
+# Errors: 0, Warnings: 2
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 14:59:53 on May 30,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# fail Min =  2
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(77)
+#    Time: 13950 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 77
+# Break key hit
+quit -sim
+# End time: 15:00:42 on May 30,2024, Elapsed time: 0:00:49
+# Errors: 0, Warnings: 1
