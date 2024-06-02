@@ -106,6 +106,6 @@ module top_level(
   end
   */
 
-  assign done = prog_ctr_out == 128;
+  assign done = prog_ctr_out == 180;
  
 endmodule

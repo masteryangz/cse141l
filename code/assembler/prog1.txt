@@ -1,9 +1,9 @@
-sw r7 r7              #mem[64] = 64
-lw r0 r7              #r0 = 64
+sw r7 r7              #mem[64] = 64(setup phas starts)
 lw r1 r7              #r1 = 64
 sw r2 r7              #max(mem[64]) = 0
-rst r0 001            #r0 = 32
-rst r0 001            #r0 = 16
+ld r0 111             #r0 = 7
+add r0 r6             #r0 = 8
+add r0 r0             #r0 = 16
 add r7 r6             #r7 = 65
 sw r0 r7              #min(mem[65]) = 16
 add r7 r6             #r7 = 66
@@ -13,24 +13,22 @@ sw r2 r7              #mem[67] = r2(i=0)
 add r7 r6             #r7 = 68
 sw r3 r7              #mem[68] = r3(j=0)
 add r7 r6             #r7 = 69
-sw r4 r7              #mem[69] = r4(k=0)
+sw r3 r7              #mem[69] = r3(k=0)
 add r7 r5             #r7 = 68
 add r7 r5             #r7 = 67
 add r7 r5             #r7 = 66
 add r7 r5             #r7 = 65
-add r7 r5             #r7 = 64
+add r7 r5             #r7 = 64(setup phase ends)
 xor r2 r5             #r2 = ~r2(i loop jump back to here)
 add r2 r6             #r2 = r2+1(-i)
 add r7 r5             #r7 = len(n)-1
 add r7 r5             #r7 = len(n)-2
 add r7 r5             #r7 = len(n)-3
-add r7 r5             #r7 = len(n)-4
-add r2 r7             #r2 = len(n)-4-i
-add r7 r6             #r7 = len(n)-3
+add r2 r7             #r2 = len(n)-3-i
 add r7 r6             #r7 = len(n)-2
 add r7 r6             #r7 = len(n)-1
 add r7 r6             #r7 = len(n)
-jmp r2 110            #for i in range(len(n)-3)
+jmp r2 110            #for i in range(len(n)-2)
 add r7 r6             #r7 = len(n)+1
 add r7 r6             #r7 = len(n)+2
 add r7 r6             #r7 = len(n)+3
@@ -43,9 +41,7 @@ add r3 r2             #r3(j) = r2(i)+2
 xor r3 r5             #r3 = ~r3(j loop jump back to here)
 add r3 r6             #r3 = r3+1(-j)
 add r7 r5             #r7 = len(n)-1
-add r7 r5             #r7 = len(n)-2
-add r3 r7             #r4 = len(n)-2-j
-add r7 r6             #r7 = len(n)-1
+add r3 r7             #r4 = len(n)-1-j
 add r7 r6             #r7 = len(n)
 jmp r3 100            #for j in range(i+2, len(n))
 add r7 r6             #r7 = len(n)+1
@@ -66,11 +62,12 @@ xor r3 r5             #r3 = ~r3
 add r3 r6             #r3 = -6
 add r7 r3             #r7 = len(n)
 ld r3 000             #r3 = 0(setBits)
-xor r4 r5             #r4(k) = ~r4
-add r4 r6             #r4 = r4+1(-r4)
+xor r4 r5             #r4(k) = ~r4(first k loop jump back to here)
+add r4 r6             #r4 = r4+1(-k)
 ld r1 111             #r1 = 7
-add r4 r1             #r4 = 7 - k
-jmp r4 010            #for k in range(16)(first k loop)
+add r1 r6             #r1 = 8
+add r4 r1             #r4 = 8 - k
+jmp r4 010            #for k in range(8)(first k loop)
 ld r2 110             #r2 = 6
 add r7 r2             #r7 = len(n)+6
 lw r2 r7              #r2 = mem[70](x=n[i]^n[j])
@@ -84,30 +81,46 @@ rst r0 001            #r0(x) >>= 1
 ld r2 110             #r2 = 6
 add r7 r2             #r7 = len(n)+6
 sw r0 r7              #update x in mem
-xor r2 r5             #r2 = ~r2
-add r2 r6             #r2 = r2+1(-6)
-add r7 r2             #r7 = len(n)
+add r7 r5             #r7 = len(n)+5
+lw r4 r7              #r4 = k
+add r4 r6             #k+=1
+sw r4 r7              #mem[69] = k
+add r7 r5             #r7 = len(n)+4
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
 jmp r5 011            #jump back to first k loop
-lw r4 r2              #load mem[i] into r4
-lw r0 r3              #load mem[j] into r0
-xor r0 r4             #x(r0) = n[i]^n[j]
+add r7 r6             #r7 = len(n)+1
+add r7 r6             #r7 = len(n)+2
+add r7 r6             #r7 = len(n)+3
+lw r2 r7              #r2 = mem[67](i)
+add r7 r6             #r7 = len(n)+4
+lw r3 r7              #r3 = mem[68](j)
+add r2 r6             #r2 = i+1
+lw r4 r2              #load mem[i+1] into r4
+add r3 r6             #r3 = j+1
+lw r0 r3              #load mem[j+1] into r0
+xor r0 r4             #x(r0) = n[i+1]^n[j+1]
 ld r4 101             #r4 = 5
 add r7 r6             #r7 = len(n)+5
-lw r4 r7              #r4 = mem[69](k)
+ld r4 000             #r4 = 0
+sw r4 r7              #mem[69](k) = 0
 add r7 r6             #r7 = len(n)+6
-sw r0 r7              #mem[70] = x(n[i]^n[j])
+sw r0 r7              #mem[70] = x(n[i+1]^n[j+1])
 ld r3 110             #r3 = 6
 xor r3 r5             #r3 = ~r3
 add r3 r6             #r3 = -6
 add r7 r3             #r7 = len(n)
-xor r4 r5             #r4(k) = ~r4
+xor r4 r5             #r4(k) = ~r4(second k loop jump back to here)
 add r4 r6             #r4 = r4+1(-r4)
 ld r1 111             #r1 = 7
-add r4 r1             #r4 = 7 - k
-jmp r4 010            #for k in range(16)(second k loop)
+add r1 r6             #r1 = 8
+add r4 r1             #r4 = 8 - k
+jmp r4 010            #for k in range(8)(second k loop)
 ld r2 110             #r2 = 6
 add r7 r2             #r7 = len(n)+6
-lw r2 r7              #r2 = mem[70](x=n[i]^n[j])
+lw r2 r7              #r2 = mem[70](x=n[i+1]^n[j+1])
 rst r2 001            #r2 = r2/2
 add r2 r2             #r2 = r2+r2
 xor r2 r5             #r2 = ~r2
@@ -118,27 +131,32 @@ rst r0 001            #r0(x) >>= 1
 ld r2 110             #r2 = 6
 add r7 r2             #r7 = len(n)+6
 sw r0 r7              #update x in mem
-xor r2 r5             #r2 = ~r2
-add r2 r6             #r2 = r2+1(-6)
-add r7 r2             #r7 = len(n)
+add r7 r5             #r7 = len(n)+5
+lw r4 r7              #r4 = k
+add r4 r6             #k+=1
+sw r4 r7              #mem[69] = k
+add r7 r5             #r7 = len(n)+4
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
 jmp r5 011            #jump back to second k loop
-add r7 r6             #r7 = len(n)+1
-lw r0 r7              #r0 = mem[65](max)
+lw r0 r7              #r0 = mem[64](max)
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(-max)
 add r0 r3             #r0 = setBits-max
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(max-setBits)
 pos r0 000            #if setBits > max
-sw r3 r7              #mem[65](max) = setBits
-add r7 r5             #r7 = len(n)
-lw r0 r7              #r0 = mem[64](min)
+sw r3 r7              #mem[64](max) = setBits
+add r7 r6             #r7 = len(n)+1
+lw r0 r7              #r0 = mem[65](min)
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(-min)
 add r0 r3             #r0 = setBits-min
 pos r0 000            #if setBits < min
-sw r3 r7              #mem[64](min) = setBits
-ld r3 100             #r3 = 4
+sw r3 r7              #mem[65](min) = setBits
+ld r3 011             #r3 = 3
 add r7 r3             #r7 = len(n)+4
 lw r3 r7              #r3 = j
 add r3 r6             #j+=1
