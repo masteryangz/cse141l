@@ -59,19 +59,21 @@ module test_bench;
         end
 	  end
     end   
-	#200ns start = 'b0; 
+    #200ns start = 'b0; 
+    #2000000ns $display("reg core[0] = %d, reg core[1] = %d, reg core[2] = %d, reg core[3] = %d, reg core[4] = %d, reg core[5] = %d, reg core[6] = %d, reg core[7] = %d",D1.rf1.core[0],D1.rf1.core[1],D1.rf1.core[2],D1.rf1.core[3],D1.rf1.core[4],D1.rf1.core[5],D1.rf1.core[6],D1.rf1.core[7]);
+    $display("dm core[64] = %d, dm core[65] = %d, dm core[66] = %d, dm core[67] = %d, dm core[68] = %d, dm core[69] = %d, dm core[70] = %d",D1.dm.core[64],D1.dm.core[65],D1.dm.core[66],D1.dm.core[67],D1.dm.core[68],D1.dm.core[69],D1.dm.core[70]);
     #200ns wait (done);						 // avoid false done signals on startup
-
+//$display("dm core[66] = %d, dm core[67] = %d, dm core[68] = %d, dm core[69] = %d, dm core[70] = %d",D1.dm.core[66],D1.dm.core[67],D1.dm.core[68],D1.dm.core[69],D1.dm.core[70]);
 // check results in data_mem[64] and [65] (Minimum and Maximum distances, respectively)
     if(Min == D1.dm.core[64]) $display("good Min = %d",Min);
-	else                      $display("fail Min = %d",Min);
+	else                      $display("fail Min = %d, dm core[64] = %d",Min,D1.dm.core[64]);
                               $display("Min addr = %d, %d",Min1, Min2);
 							  $display("Min valu = %b, %b",Tmp[Min1],Tmp[Min2]);//{D1.dm.core[2*Min1],D1.dm.core[2*Min1+1]},{D1.dm.core[2*Min2],D1.dm.core[2*Min2+1]});
 	if(Max == D1.dm.core[65]) $display("good Max = %d",Max);
-	else                      $display("MAD  Max = %d",Max);
+	else                      $display("MAD  Max = %d, dm core[65] = %d",Max,D1.dm.core[65]);
 	                          $display("Max pair = %d, %d",Max1, Max2);
 							  $display("Max valu = %b, %b",Tmp[Max1],Tmp[Max2]);//{D1.dm.core[2*Max1],D1.dm.core[2*Max1+1]},{D1.dm.core[2*Max2],D1.dm.core[2*Max2+1]});
-    #200ns start = 'b1;
+  #200ns start = 'b1;
 // to do: load operands for program 2 into data memory (reuse program 1 operands is fine here)
 	#200ns start = 'b0;
 	$stop;

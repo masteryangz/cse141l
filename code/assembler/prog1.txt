@@ -1,11 +1,11 @@
-sw r7 r7              #mem[64] = 64(setup phas starts)
+sw r7 r7              #mem[64] = 64(setup phase starts)
 lw r1 r7              #r1 = 64
-sw r2 r7              #max(mem[64]) = 0
 ld r0 111             #r0 = 7
 add r0 r6             #r0 = 8
 add r0 r0             #r0 = 16
+sw r0 r7              #min(mem[64]) = 16
 add r7 r6             #r7 = 65
-sw r0 r7              #min(mem[65]) = 16
+sw r2 r7              #max(mem[65]) = 0
 add r7 r6             #r7 = 66
 sw r1 r7              #mem[66] = 64
 add r7 r6             #r7 = 67
@@ -90,7 +90,7 @@ add r7 r5             #r7 = len(n)+3
 add r7 r5             #r7 = len(n)+2
 add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
-jmp r5 011            #jump back to first k loop
+pos r6 011            #jump back to first k loop
 add r7 r6             #r7 = len(n)+1
 add r7 r6             #r7 = len(n)+2
 add r7 r6             #r7 = len(n)+3
@@ -140,22 +140,22 @@ add r7 r5             #r7 = len(n)+3
 add r7 r5             #r7 = len(n)+2
 add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
-jmp r5 011            #jump back to second k loop
-lw r0 r7              #r0 = mem[64](max)
+pos r6 011            #jump back to second k loop
+lw r0 r7              #r0 = mem[64](min)
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-min)
+add r0 r3             #r0 = setBits-min
+pos r0 000            #if setBits < min
+sw r3 r7              #mem[64](max) = setBits
+add r7 r6             #r7 = len(n)+1
+lw r0 r7              #r0 = mem[65](max)
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(-max)
 add r0 r3             #r0 = setBits-max
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(max-setBits)
 pos r0 000            #if setBits > max
-sw r3 r7              #mem[64](max) = setBits
-add r7 r6             #r7 = len(n)+1
-lw r0 r7              #r0 = mem[65](min)
-xor r0 r5             #r0 = ~r0
-add r0 r6             #r0 = r0+1(-min)
-add r0 r3             #r0 = setBits-min
-pos r0 000            #if setBits < min
-sw r3 r7              #mem[65](min) = setBits
+sw r3 r7              #mem[65](max) = setBits
 ld r3 011             #r3 = 3
 add r7 r3             #r7 = len(n)+4
 lw r3 r7              #r3 = j
@@ -166,7 +166,7 @@ add r7 r5             #r7 = len(n)+3
 add r7 r5             #r7 = len(n)+2
 add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
-jmp r5 101            #jump back to j for loop
+pos r6 101            #jump back to j for loop
 ld r2 011             #r2 = 3
 add r7 r2             #r7 = len(n)+3
 lw r2 r7              #r2 = i
@@ -176,4 +176,9 @@ sw r2 r7              #mem[67] = i
 add r7 r5             #r7 = len(n)+2
 add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
-jmp r5 111            #jump back to i for loop
+pos r6 111            #jump back to i for loop
+ld r0 000             #r0 = 0
+ld r0 000             #r1 = 0
+ld r0 000             #r2 = 0
+ld r0 000             #r3 = 0
+ld r0 000             #r4 = 0
