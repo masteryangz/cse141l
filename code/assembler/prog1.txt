@@ -189,7 +189,7 @@ add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
 pos r5 111            #jump back to i for loop
 ld r0 000             #r0 = 0
-ld r0 000             #r1 = 0
-ld r0 000             #r2 = 0
-ld r0 000             #r3 = 0
-ld r0 000             #r4 = 0
+ld r1 000             #r1 = 0
+ld r2 000             #r2 = 0
+ld r3 000             #r3 = 0
+ld r4 000             #r4 = 0
