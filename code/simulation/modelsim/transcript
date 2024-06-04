@@ -1,6 +1,6 @@
 vsim -gui work.test_bench
 # vsim -gui work.test_bench 
-# Start time: 14:38:36 on Jun 03,2024
+# Start time: 11:36:41 on Jun 04,2024
 # Loading sv_std.std
 # Loading work.test_bench
 # Loading work.top_level
@@ -12,925 +12,12 @@ vsim -gui work.test_bench
 # Loading work.reg_file
 # Loading work.alu
 # Loading work.dat_mem
-add wave sim:/test_bench/D1/*
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
 add wave  \
 sim:/test_bench/D1/rf1/core
 add wave  \
-sim:/test_bench/D1/dm/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   0, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  96
-# dm core[64] =   0, dm core[65] =   6, dm core[66] =   0, dm core[67] =   5, dm core[68] =   0, dm core[69] =   5, dm core[70] =   0
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 15:51:17 on Jun 03,2024, Elapsed time: 1:12:41
-# Errors: 0, Warnings: 1
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 15:51:36 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   0, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  96
-# dm core[64] =   0, dm core[65] =   6, dm core[66] =   0, dm core[67] =   5, dm core[68] =   0, dm core[69] =   5, dm core[70] =   0
-# Break key hit
-# Break in Module dat_mem at C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv line 12
-quit -sim
-# End time: 16:03:05 on Jun 03,2024, Elapsed time: 0:11:29
-# Errors: 0, Warnings: 2
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 16:03:39 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   6, reg core[3] =   0, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  96
-# dm core[64] =   0, dm core[65] =   6, dm core[66] =   0, dm core[67] =   5, dm core[68] =   0, dm core[69] =   5, dm core[70] =   0
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 16:18:23 on Jun 03,2024, Elapsed time: 0:14:44
-# Errors: 0, Warnings: 1
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 16:19:04 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   6, reg core[3] =   5, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  96
-# dm core[64] =   0, dm core[65] =   6, dm core[66] =   0, dm core[67] =   5, dm core[68] =   0, dm core[69] =   5, dm core[70] =   0
-# fail Min =  2, dm core[64] =   0
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14, dm core[65] =  28
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
-#    Time: 19294550 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
-quit -sim
-# End time: 16:41:48 on Jun 03,2024, Elapsed time: 0:22:44
-# Errors: 0, Warnings: 1
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 16:43:18 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   6, reg core[3] =   x, reg core[4] = 154, reg core[5] = 255, reg core[6] =   1, reg core[7] =  58
-# dm core[64] =   0, dm core[65] =   6, dm core[66] =   8, dm core[67] =   0, dm core[68] =   4, dm core[69] =   8, dm core[70] =   0
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 17:13:10 on Jun 03,2024, Elapsed time: 0:29:52
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 17:13:23 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   x, reg core[4] = 111, reg core[5] = 255, reg core[6] =   1, reg core[7] =  57
-# dm core[64] =   0, dm core[65] =   0, dm core[66] =   8, dm core[67] =   0, dm core[68] =   4, dm core[69] =   8, dm core[70] =   0
-# Break key hit
-# Break in Module reg_file at C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv line 25
-quit -sim
-# End time: 17:18:05 on Jun 03,2024, Elapsed time: 0:04:42
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 17:18:43 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   1, reg core[1] =   8, reg core[2] =   1, reg core[3] = 253, reg core[4] =   4, reg core[5] = 255, reg core[6] =   1, reg core[7] =  66
-# dm core[64] = 254, dm core[65] = 254, dm core[66] =  64, dm core[67] =   4, dm core[68] =  14, dm core[69] =   4, dm core[70] =   1
-# fail Min =  2, dm core[64] = 252
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14, dm core[65] = 252
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
-#    Time: 2736550 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
-quit -sim
-# End time: 17:28:19 on Jun 03,2024, Elapsed time: 0:09:36
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 17:28:37 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =  13, reg core[1] =   8, reg core[2] = 243, reg core[3] = 251, reg core[4] =   7, reg core[5] = 255, reg core[6] =   1, reg core[7] =  70
-# dm core[64] = 254, dm core[65] = 254, dm core[66] =  64, dm core[67] =   4, dm core[68] =  14, dm core[69] =   1, dm core[70] =  13
-# fail Min =  2, dm core[64] = 252
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14, dm core[65] = 252
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
-#    Time: 2745450 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
-quit -sim
-# End time: 17:42:53 on Jun 03,2024, Elapsed time: 0:14:16
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 17:43:10 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   x, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  76
-# dm core[64] =  16, dm core[65] =   0, dm core[66] =  64, dm core[67] =   0, dm core[68] =   2, dm core[69] =   0, dm core[70] = 165
-# Break key hit
-# Break in Module reg_file in file C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv
-quit -sim
-# End time: 17:56:23 on Jun 03,2024, Elapsed time: 0:13:13
-# Errors: 0, Warnings: 2
-# Load canceled
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 17:57:18 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   x, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  76
-# dm core[64] =  16, dm core[65] =   0, dm core[66] =  64, dm core[67] =   0, dm core[68] =   2, dm core[69] =   0, dm core[70] = 165
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 18:01:23 on Jun 03,2024, Elapsed time: 0:04:05
-# Errors: 0, Warnings: 2
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 18:01:33 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   4, reg core[4] =   8, reg core[5] = 255, reg core[6] =   1, reg core[7] =  69
-# dm core[64] =   2, dm core[65] =   2, dm core[66] =  64, dm core[67] =   4, dm core[68] =  12, dm core[69] =   8, dm core[70] =   0
-# good Min =  2
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14, dm core[65] =   2
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
-#    Time: 2763250 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
-quit -sim
-# End time: 18:21:48 on Jun 03,2024, Elapsed time: 0:20:15
-# Errors: 0, Warnings: 1
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 18:22:03 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-add wave  \
-{sim:/test_bench/D1/dm/core[65]}
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   4, reg core[4] =   8, reg core[5] = 255, reg core[6] =   1, reg core[7] =  69
-# dm core[64] =   2, dm core[65] =   2, dm core[66] =  64, dm core[67] =   4, dm core[68] =  12, dm core[69] =   8, dm core[70] =   0
-# good Min =  2
-# Min addr = 16,  6
-# Min valu = 1000010011000101, 1000010001100101
-# MAD  Max = 14, dm core[65] =   2
-# Max pair = 22,  2
-# Max valu = 0110100111110010, 1101011000001001
-# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
-#    Time: 2763250 ns  Iteration: 0  Instance: /test_bench
-# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
-quit -sim
-# End time: 18:31:20 on Jun 03,2024, Elapsed time: 0:09:17
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 18:31:36 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave sim:/test_bench/D1/rf1/*
-add wave  \
-{sim:/test_bench/D1/dm/core[65]}
-add wave sim:/test_bench/D1/*
-add wave  \
-sim:/test_bench/D1/rf1/core
-add wave  \
-{sim:/test_bench/D1/dm/core[65]}
-run -all
-#           0:  0011010100100100
-#           1:  0101111010000001
-#           2:  1101011000001001
-#           3:  0101011001100011
-#           4:  0111101100001101
-#           5:  1001100110001101
-#           6:  1000010001100101
-#           7:  0101001000010010
-#           8:  1110001100000001
-#           9:  1100110100001101
-#          10:  1111000101110110
-#          11:  1100110100111101
-#          12:  0101011111101101
-#          13:  1111011110001100
-#          14:  1110100111111001
-#          15:  0010010011000110
-#          16:  1000010011000101
-#          17:  1101001010101010
-#          18:  1111011111100101
-#          19:  0111001001110111
-#          20:  1101011000010010
-#          21:  1101101110001111
-#          22:  0110100111110010
-#          23:  1001011011001110
-#          24:  0111101011101000
-#          25:  0100111011000101
-#          26:  0100100101011100
-#          27:  0010100010111101
-#          28:  0101100000101101
-#          29:  0010011001100101
-#          30:  0110001001100011
-#          31:  1000011100001010
-# reg core[0] =   0, reg core[1] =   8, reg core[2] =   0, reg core[3] =   x, reg core[4] =   x, reg core[5] = 255, reg core[6] =   1, reg core[7] =  52
-# dm core[64] =  11, dm core[65] =   8, dm core[66] =   0, dm core[67] =   3, dm core[68] =   4, dm core[69] =   8, dm core[70] =   0
-# Break key hit
-# Simulation stop requested.
-quit -sim
-# End time: 18:44:41 on Jun 03,2024, Elapsed time: 0:13:05
-# Errors: 0, Warnings: 2
-# Compile of alu.sv was successful.
-# Compile of Control.sv was successful.
-# Compile of dat_mem.sv was successful.
-# Compile of instr_ROM.sv was successful.
-# Compile of nexPC.sv was successful.
-# Compile of PC.sv was successful.
-# Compile of PC_LUT.sv was successful.
-# Compile of reg_file.sv was successful.
-# Compile of top_level.sv was successful.
-# Compile of alu_tb.sv was successful.
-# Compile of PC_testbench.sv was successful.
-# Compile of test_bench.sv was successful.
-# 12 compiles, 0 failed with no errors.
-vsim -gui work.test_bench
-# vsim -gui work.test_bench 
-# Start time: 18:45:48 on Jun 03,2024
-# Loading sv_std.std
-# Loading work.test_bench
-# Loading work.top_level
-# Loading work.PC
-# Loading work.PC_LUT
-# Loading work.nextPC
-# Loading work.instr_ROM
-# Loading work.Control
-# Loading work.reg_file
-# Loading work.alu
-# Loading work.dat_mem
-add wave sim:/test_bench/D1/*
-add wave sim:/test_bench/D1/rf1/*
+{sim:/test_bench/D1/dm/core[64]}
 add wave  \
 {sim:/test_bench/D1/dm/core[65]}
 run -all
@@ -978,5 +65,829 @@ run -all
 #    Time: 3200550 ns  Iteration: 0  Instance: /test_bench
 # Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
 quit -sim
-# End time: 18:49:27 on Jun 03,2024, Elapsed time: 0:03:39
-# Errors: 0, Warnings: 4
+# End time: 11:52:24 on Jun 04,2024, Elapsed time: 0:15:43
+# Errors: 0, Warnings: 1
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 11:52:41 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =  18, reg core[1] =   8, reg core[2] = 237, reg core[3] =   2, reg core[4] =   5, reg core[5] = 255, reg core[6] =   1, reg core[7] =  70
+# dm core[64] =  16, dm core[65] =   0, dm core[66] =  64, dm core[67] =   2, dm core[68] =  18, dm core[69] =   3, dm core[70] =  18
+# fail Min =  2, dm core[64] =  16
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =   0
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3188350 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:00:15 on Jun 04,2024, Elapsed time: 0:07:34
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 12:00:27 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =  18, reg core[1] =   8, reg core[2] = 237, reg core[3] =   2, reg core[4] =   5, reg core[5] = 255, reg core[6] =   1, reg core[7] =  70
+# dm core[64] =  16, dm core[65] =   0, dm core[66] =  64, dm core[67] =   2, dm core[68] =  18, dm core[69] =   3, dm core[70] =  18
+# fail Min =  2, dm core[64] =  16
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =   0
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3188350 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:18:27 on Jun 04,2024, Elapsed time: 0:18:00
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 12:18:42 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =   0, reg core[1] =   8, reg core[2] =  10, reg core[3] =  12, reg core[4] =   0, reg core[5] = 255, reg core[6] =   1, reg core[7] =  64
+# dm core[64] =   0, dm core[65] =   0, dm core[66] =  64, dm core[67] =  10, dm core[68] =  12, dm core[69] =   0, dm core[70] =  64
+# fail Min =  2, dm core[64] =   1
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =   1
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 2065050 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:24:39 on Jun 04,2024, Elapsed time: 0:05:57
+# Errors: 0, Warnings: 2
+# Compile of alu.sv failed with 1 errors.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 1 failed with 1 error.
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 12:25:57 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave sim:/test_bench/D1/*
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =  18, reg core[1] =   8, reg core[2] =   0, reg core[3] =   2, reg core[4] =   3, reg core[5] = 255, reg core[6] =   1, reg core[7] =  67
+# dm core[64] =   4, dm core[65] =  11, dm core[66] =  64, dm core[67] =   2, dm core[68] =  18, dm core[69] =   3, dm core[70] =  18
+# fail Min =  2, dm core[64] =   3
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  13
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3190150 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:35:33 on Jun 04,2024, Elapsed time: 0:09:36
+# Errors: 0, Warnings: 3
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 12:35:54 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave sim:/test_bench/D1/pc1/*
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =  18, reg core[1] =   8, reg core[2] =   0, reg core[3] =   2, reg core[4] =   3, reg core[5] = 255, reg core[6] =   1, reg core[7] =  67
+# dm core[64] =   4, dm core[65] =  11, dm core[66] =  64, dm core[67] =   2, dm core[68] =  18, dm core[69] =   3, dm core[70] =  18
+# fail Min =  2, dm core[64] =   3
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  13
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3190150 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:47:11 on Jun 04,2024, Elapsed time: 0:11:17
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.alu_tb
+# vsim -gui work.alu_tb 
+# Start time: 12:47:24 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.alu_tb
+# Loading work.alu
+run -all
+#  opcode=1,  inA=160  inB=  6  rslt= 80  taken=0
+#  opcode=2,  inA= 17  inB=144  rslt=161  taken=0
+#  opcode=3,  inA=128  inB=  0  rslt=  0  taken=0
+#  opcode=4,  inA= 17  inB=144  rslt=129  taken=0
+#  opcode=5,  inA=  0  inB=  0  rslt=  0  taken=1
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv(43)
+#    Time: 50 ns  Iteration: 0  Instance: /alu_tb
+# Break in Module alu_tb at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv line 43
+quit -sim
+# End time: 12:49:26 on Jun 04,2024, Elapsed time: 0:02:02
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.alu_tb
+# vsim -gui work.alu_tb 
+# Start time: 12:49:57 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.alu_tb
+# Loading work.alu
+run -all
+#  opcode=1,  inA=160  inB=  6  rslt= 80  taken=0
+#  opcode=2,  inA= 17  inB=144  rslt=161  taken=0
+#  opcode=3,  inA=128  inB=  0  rslt=  0  taken=1
+#  opcode=4,  inA= 17  inB=144  rslt=129  taken=0
+#  opcode=5,  inA=  0  inB=  0  rslt=  0  taken=1
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv(43)
+#    Time: 50 ns  Iteration: 0  Instance: /alu_tb
+# Break in Module alu_tb at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv line 43
+quit -sim
+# End time: 12:54:20 on Jun 04,2024, Elapsed time: 0:04:23
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 12:54:36 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =   0, reg core[1] =   8, reg core[2] =  10, reg core[3] =  12, reg core[4] =   0, reg core[5] = 255, reg core[6] =   1, reg core[7] =  64
+# dm core[64] =   0, dm core[65] =   8, dm core[66] =  64, dm core[67] =  10, dm core[68] =  12, dm core[69] =   0, dm core[70] =  64
+# fail Min =  2, dm core[64] =   1
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  10
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 2064550 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 12:59:51 on Jun 04,2024, Elapsed time: 0:05:15
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 13:00:01 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =   0, reg core[1] =   8, reg core[2] =  10, reg core[3] =  12, reg core[4] =   0, reg core[5] = 255, reg core[6] =   1, reg core[7] =  64
+# dm core[64] =   0, dm core[65] =   8, dm core[66] =  64, dm core[67] =  10, dm core[68] =  12, dm core[69] =   0, dm core[70] =  64
+# fail Min =  2, dm core[64] =   1
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  10
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 2064550 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# End time: 13:03:28 on Jun 04,2024, Elapsed time: 0:03:27
+# Errors: 0, Warnings: 2
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 13:03:41 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+add wave  \
+sim:/test_bench/D1/pc1/prog_ctr_out
+add wave  \
+sim:/test_bench/D1/rf1/core
+add wave  \
+sim:/test_bench/D1/alu1/inA
+add wave  \
+sim:/test_bench/D1/alu1/taken
+add wave  \
+{sim:/test_bench/D1/dm/core[64]}
+add wave  \
+{sim:/test_bench/D1/dm/core[65]}
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =  18, reg core[1] =   8, reg core[2] =   0, reg core[3] =   2, reg core[4] =   3, reg core[5] = 255, reg core[6] =   1, reg core[7] =  67
+# dm core[64] =   4, dm core[65] =  11, dm core[66] =  64, dm core[67] =   2, dm core[68] =  18, dm core[69] =   3, dm core[70] =  18
+# fail Min =  2, dm core[64] =   3
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  13
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3190150 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79
+quit -sim
+# Compile of alu.sv was successful.
+# Compile of Control.sv was successful.
+# Compile of dat_mem.sv was successful.
+# Compile of instr_ROM.sv was successful.
+# Compile of nexPC.sv was successful.
+# Compile of PC.sv was successful.
+# Compile of PC_LUT.sv was successful.
+# Compile of reg_file.sv was successful.
+# Compile of top_level.sv was successful.
+# Compile of alu_tb.sv was successful.
+# Compile of PC_testbench.sv was successful.
+# Compile of test_bench.sv was successful.
+# 12 compiles, 0 failed with no errors.
+# End time: 13:37:37 on Jun 04,2024, Elapsed time: 0:33:56
+# Errors: 0, Warnings: 3
+vsim -gui work.test_bench
+# vsim -gui work.test_bench 
+# Start time: 13:37:45 on Jun 04,2024
+# Loading sv_std.std
+# Loading work.test_bench
+# Loading work.top_level
+# Loading work.PC
+# Loading work.PC_LUT
+# Loading work.nextPC
+# Loading work.instr_ROM
+# Loading work.Control
+# Loading work.reg_file
+# Loading work.alu
+# Loading work.dat_mem
+run -all
+#           0:  0011010100100100
+#           1:  0101111010000001
+#           2:  1101011000001001
+#           3:  0101011001100011
+#           4:  0111101100001101
+#           5:  1001100110001101
+#           6:  1000010001100101
+#           7:  0101001000010010
+#           8:  1110001100000001
+#           9:  1100110100001101
+#          10:  1111000101110110
+#          11:  1100110100111101
+#          12:  0101011111101101
+#          13:  1111011110001100
+#          14:  1110100111111001
+#          15:  0010010011000110
+#          16:  1000010011000101
+#          17:  1101001010101010
+#          18:  1111011111100101
+#          19:  0111001001110111
+#          20:  1101011000010010
+#          21:  1101101110001111
+#          22:  0110100111110010
+#          23:  1001011011001110
+#          24:  0111101011101000
+#          25:  0100111011000101
+#          26:  0100100101011100
+#          27:  0010100010111101
+#          28:  0101100000101101
+#          29:  0010011001100101
+#          30:  0110001001100011
+#          31:  1000011100001010
+# reg core[0] =   1, reg core[1] =   8, reg core[2] =   1, reg core[3] =   3, reg core[4] =   3, reg core[5] = 255, reg core[6] =   1, reg core[7] =  69
+# dm core[64] =   3, dm core[65] =  13, dm core[66] =  64, dm core[67] =   4, dm core[68] =  22, dm core[69] =   3, dm core[70] =   1
+# fail Min =  2, dm core[64] =   3
+# Min addr = 16,  6
+# Min valu = 1000010011000101, 1000010001100101
+# MAD  Max = 14, dm core[65] =  13
+# Max pair = 22,  2
+# Max valu = 0110100111110010, 1101011000001001
+# ** Note: $stop    : C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv(79)
+#    Time: 3622850 ns  Iteration: 0  Instance: /test_bench
+# Break in Module test_bench at C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench.sv line 79

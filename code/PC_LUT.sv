@@ -3,7 +3,7 @@ module PC_LUT #(parameter D=12)(
   output logic[D-1:0] target);
 
   always_comb case(how_high)
-    0: target = 1;  
+    0: target = 2;  
     1: target = -19;  
 	2: target = 22;   
 	3: target = -26;

@@ -93,7 +93,7 @@
 010111101 //r7 = len(n)+2
 010111101 //r7 = len(n)+1
 010111101 //r7 = len(n)
-011110011 //jump back to first k loop
+011101011 //jump back to first k loop
 000000111 //r0 = 7
 010111000 //r7 = len(n)+7
 111011111 //mem[71] = r3(setBits)
@@ -147,11 +147,13 @@
 010111101 //r7 = len(n)+2
 010111101 //r7 = len(n)+1
 010111101 //r7 = len(n)
-011110011 //jump back to second k loop
+011101011 //jump back to second k loop
 110000111 //r0 = mem[64](min)
 100000101 //r0 = ~r0
 010000110 //r0 = r0+1(-min)
 010000011 //r0 = setBits-min
+100000101 //r0 = ~r0
+010000110 //r0 = r0+1(min-setBits)
 011000000 //if setBits < min
 111011111 //mem[64](max) = setBits
 010111110 //r7 = len(n)+1
@@ -159,8 +161,6 @@
 100000101 //r0 = ~r0
 010000110 //r0 = r0+1(-max)
 010000011 //r0 = setBits-max
-100000101 //r0 = ~r0
-010000110 //r0 = r0+1(max-setBits)
 011000000 //if setBits > max
 111011111 //mem[65](max) = setBits
 000011011 //r3 = 3
@@ -177,7 +177,7 @@
 010111101 //r7 = len(n)+2
 010111101 //r7 = len(n)+1
 010111101 //r7 = len(n)
-011110101 //jump back to j for loop
+011101101 //jump back to j for loop
 000010011 //r2 = 3
 010111010 //r7 = len(n)+3
 110010111 //r2 = i
@@ -187,7 +187,7 @@
 010111101 //r7 = len(n)+2
 010111101 //r7 = len(n)+1
 010111101 //r7 = len(n)
-011110111 //jump back to i for loop
+011101111 //jump back to i for loop
 000000000 //r0 = 0
 000000000 //r1 = 0
 000000000 //r2 = 0

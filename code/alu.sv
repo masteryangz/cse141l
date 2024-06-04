@@ -26,7 +26,7 @@ always_comb begin
     3'b001: rslt = inA >>> 1;
     3'b010: rslt = inA + inB;
 	  3'b011: //pos
-	    if(inA>0) taken = 1;
+	    if(inA[7]==1) taken = 1;
       /*begin
 		rslt[7:1] = ina[6:0];
 		rslt[0]   = sc_i;
