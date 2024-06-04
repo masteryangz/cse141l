@@ -61,7 +61,7 @@ module test_bench;
     end   
     #200ns start = 'b0; 
     #200ns wait (done);						 // avoid false done signals on startup
-    #2000000ns $display("reg core[0] = %d, reg core[1] = %d, reg core[2] = %d, reg core[3] = %d, reg core[4] = %d, reg core[5] = %d, reg core[6] = %d, reg core[7] = %d",D1.rf1.core[0],D1.rf1.core[1],D1.rf1.core[2],D1.rf1.core[3],D1.rf1.core[4],D1.rf1.core[5],D1.rf1.core[6],D1.rf1.core[7]);
+    $display("reg core[0] = %d, reg core[1] = %d, reg core[2] = %d, reg core[3] = %d, reg core[4] = %d, reg core[5] = %d, reg core[6] = %d, reg core[7] = %d",D1.rf1.core[0],D1.rf1.core[1],D1.rf1.core[2],D1.rf1.core[3],D1.rf1.core[4],D1.rf1.core[5],D1.rf1.core[6],D1.rf1.core[7]);
     $display("dm core[64] = %d, dm core[65] = %d, dm core[66] = %d, dm core[67] = %d, dm core[68] = %d, dm core[69] = %d, dm core[70] = %d",D1.dm.core[64],D1.dm.core[65],D1.dm.core[66],D1.dm.core[67],D1.dm.core[68],D1.dm.core[69],D1.dm.core[70]);
 //$display("dm core[66] = %d, dm core[67] = %d, dm core[68] = %d, dm core[69] = %d, dm core[70] = %d",D1.dm.core[66],D1.dm.core[67],D1.dm.core[68],D1.dm.core[69],D1.dm.core[70]);
 // check results in data_mem[64] and [65] (Minimum and Maximum distances, respectively)
