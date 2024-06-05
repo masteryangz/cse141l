@@ -28,7 +28,7 @@ Instructions:
   - add: 010
     - e.g. `add R0, R1 ⇔ 010_000_001`
   - pos: 011
-    - e.g. `pos R0 R1 ⇔ 011_000_001`
+    - e.g. `pos R0 001 ⇔ 011_000_001`
   - xor: 100
     -  bitwise xor
     -  e.g. `xor R0 R1 ⇔ 100_000_001`
