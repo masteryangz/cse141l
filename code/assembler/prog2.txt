@@ -45,15 +45,30 @@ lw r2 r7              #r2 = mem[70](i)
 lw r2 r2              #r2 = n[i]
 add r7 r6             #r7 = 71
 lw r3 r7              #r3 = mem[71](j)
+add r7 r5             #r7 = 70
 lw r3 r3              #r3 = n[j]
 xor r3 r5             #r3 = ~r3
 add r3 r6             #r3 = r3+1(-r3)
-add r0 r3             #r0 =  n[i]-n[j]
+add r0 r3             #r0 = n[i]-n[j]
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(n[j]-n[i])
+pos r0 010            #if n[i]-n[j](MSB)<0
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(-r0)
-pos r0 001            #if n[i]-n[j]<0
-xor r0 r5             #r0 = ~r0
-add r0 r6             #r0 = r0+1(-r0)
+add r7 r5             #r7 = 69
+add r7 r5             #r7 = 68
+add r7 r5             #r7 = 67
+add r7 r5             #r7 = 66
+lw r1 r7              #r1 = mem[66](minMSB)
+xor r1 r5             #r1 = ~r1
+add r1 r6             #r1 = r1+1(-minMSB)
+add r1 r0             #r1 = r0-minMSB
+xor r1 r5             #r1 = ~r1
+add r1 r6             #r1 = r1+1(minMSB-r0)
+pos r1 000            #if r0 < minMSB
+sw r0 r7              #mem[66](minMSB) = r0(update minMSB)
+ld r1 110             #r1 = 6
+add r7 r1             #r7 = 70
 lw r0 r7              #r0 = mem[64](min)
 xor r0 r5             #r0 = ~r0
 add r0 r6             #r0 = r0+1(-min)
