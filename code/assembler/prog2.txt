@@ -1,4 +1,6 @@
 ld r6 001             #nop
+add r1 r7             #r1 = 64(8'b01000000)
+add r1 r1             #r1 = 128(8'b10000000)
 add r7 r6             #r7 = 65(setup phase starts)
 add r7 r6             #r7 = 66
 sw r5 r7              #mem[66](min MSB) = 8'b11111111
@@ -13,7 +15,7 @@ sw r0 r7              #mem[70](i) = 0
 add r7 r6             #r7 = 71
 sw r0 r7              #mem[71](j) = 0
 add r7 r6             #r7 = 72
-sw r0 r7              #mem[72](k) = 0
+sw r1 r7              #mem[72] = 128(8'b10000000)
 ld r4 111             #r4 = 7
 add r4 r6             #r4 = 8
 xor r4 r5             #r4 = ~r4
@@ -51,41 +53,41 @@ add r7 r6             #r7 = 71
 lw r3 r7              #r3 = mem[71](j)
 add r3 r6             #r3 = j+1
 lw r3 r3              #r3 = n[j+1]
+xor r3 r5             #r3 = ~r3
+add r3 r6             #r3 = r3+1(-n[j+1])
 add r7 r6             #r7 = 72
-lw r4 r7              #r4 = mem[72](k)
+add r7 r6             #r7 = 73
+sw r2 r7              #mem[73] = n[i+1]
+add r7 r6             #r7 = 74
+sw r3 r7              #mem[74] = -n[j+1]
+add r7 r5             #r7 = 73
+add r7 r5             #r7 = 72
+lw r0 r7              #r0 = mem[72](8'b10000000)
 add r7 r5             #r7 = 71
 add r7 r5             #r7 = 70
-xor r4 r5             #r4 = ~r4(first k loop jump back to here)
-add r4 r6             #r4 = r4+1(-k)
-ld r0 111             #r0 = 7
-add r0 r6             #r0 = 8
-add r4 r0             #r4 = 8-k
-jmp r4 010            #for k in range(8)
 ld r0 000             #r0 = 0
-add r0 r2             #r0 = n[i+1]
-rst r0 001            #r0 = r0/2
+add r0 r2             #r0 = r2
+rst r0 001            #r0 = r0>>1
 add r0 r0             #r0 = r0+r0
 xor r0 r5             #r0 = ~r0
-add r0 r6             #r0 = r0+1(-{n[i+1][15:k+1],0,n[i+1][k:0]})
-add r0 r2             #r0 = r0+r2(n[i+1][k])
+add r0 r6             #r2 = r0+1(-{n[i+1][7:1],0})
+add r0 r2             #r0 = r0+r2(n[i+1][0])
 rst r2 001            #r2 >>= 1
-add r7 r6             #r7 = 71
-add r7 r6             #r7 = 72
-lw r4 r7              #r4 = k
-add r4 r6             #k+=1
-sw r4 r7              #mem[72] = k
-add r7 r5             #r7 = 71
-add r7 r5             #r7 = 70
-pos r5 011            #jump back to first k loop
-pos r1 001            #if n[i]-n[j](MSB)<0
-xor r0 r5             #r0 = ~r0
-add r0 r6             #r0 = r0+1(-r0)
-xor r4 r5             #r4 = ~r4
-add r4 r6             #r4 = r4+1(-r4)
-add r7 r5             #r7 = 69
-add r7 r5             #r7 = 68
-add r7 r5             #r7 = 67
-add r7 r5             #r7 = 66
+xor r2 r5             #r2 = ~r2
+rst r3 001            #r3 >>= 1
+xor r3 r5             #r3 = ~r3
+pos r2 001            #if n[i+1]<0
+xor r2 r5             #r2 = ~r2
+xor r2 r0             #r2 = r2^r0({0,r2[7:1]})
+jmp r6 000            #else
+xor r2 r5             #r2 = ~r2
+pos r3 001            #if -n[j+1]<0
+xor r3 r5             #r3 = ~r3
+xor r3 r0             #r3 = r3^r0({0,r3[7:1]})
+jmp r6 000            #else
+xor r3 r5             #r3 = ~r3
+add r2 r3             #r2 = {0,n[i+1][7:1]}+{0,-n[j+1][7:1]}
+xor 
 lw r1 r7              #r1 = mem[66](minMSB)
 xor r1 r5             #r1 = ~r1
 add r1 r6             #r1 = r1+1(-minMSB)
