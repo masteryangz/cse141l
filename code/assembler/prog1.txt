@@ -177,6 +177,47 @@ add r7 r5             #r7 = len(n)+3
 add r7 r5             #r7 = len(n)+2
 add r7 r5             #r7 = len(n)+1
 add r7 r5             #r7 = len(n)
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
 pos r5 101            #jump back to j for loop
 ld r2 011             #r2 = 3
 add r7 r2             #r7 = len(n)+3
@@ -193,3 +234,7 @@ ld r1 000             #r1 = 0
 ld r2 000             #r2 = 0
 ld r3 000             #r3 = 0
 ld r4 000             #r4 = 0
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
