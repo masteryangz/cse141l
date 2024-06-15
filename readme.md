@@ -3,7 +3,7 @@
 
 
 ## Working Programs
-- **Program 1:** Describe the first working feature in detail, including what it does and how it functions.
+- **Program 1:** worked as expected. output file in ```\test benches\program1\output_log.txt```
 
 
 ## Non-Working Programs
