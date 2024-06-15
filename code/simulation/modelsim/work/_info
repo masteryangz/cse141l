@@ -11,7 +11,7 @@ cModel Technology
 dC:/Users/y1499/OneDrive/Desktop/cse141l/code
 valu
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1718324094
+Z1 !s110 1718409975
 !i10b 1
 !s100 ;FG]FG0m5U;BSanB>6b8V0
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ Z4 dC:/Users/y1499/OneDrive/Desktop/cse141l/code/simulation/modelsim
 w1717530638
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv
-!i122 1059
+!i122 1119
 L0 3 44
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1718324094.000000
+Z6 !s108 1718409975.000000
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/alu.sv|
 !i113 1
@@ -36,7 +36,7 @@ Z7 o-work work -sv
 Z8 tCvgOpt 0
 valu_tb
 R0
-Z9 !s110 1718324096
+Z9 !s110 1718409977
 !i10b 1
 !s100 ^UfdWi8^6PJKg>M@f9<6^1
 R2
@@ -47,13 +47,13 @@ R4
 w1717530421
 8C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv
-!i122 1068
+!i122 1128
 L0 2 50
 R5
 r1
 !s85 0
 31
-Z10 !s108 1718324095.000000
+Z10 !s108 1718409977.000000
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/alu_tb.sv|
 !i113 1
@@ -72,7 +72,7 @@ R4
 w1716501132
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/Control.sv
-!i122 1060
+!i122 1120
 L0 2 40
 R5
 r1
@@ -98,7 +98,7 @@ R4
 w1713152922
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/dat_mem.sv
-!i122 1061
+!i122 1121
 L0 2 18
 R5
 r1
@@ -112,7 +112,7 @@ R7
 R8
 vinstr_ROM
 R0
-Z11 !s110 1718324095
+Z11 !s110 1718409976
 !i10b 1
 !s100 _l7FXchzc=4hOaWfMd;jo1
 R2
@@ -123,13 +123,13 @@ R4
 w1717105521
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv
-!i122 1062
+!i122 1122
 Z12 L0 4 11
 R5
 r1
 !s85 0
 31
-R6
+Z13 !s108 1718409976.000000
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv|
 !i113 1
@@ -149,13 +149,13 @@ R4
 w1717106210
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
-!i122 1063
+!i122 1123
 L0 3 17
 R5
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv|
 !i113 1
@@ -175,13 +175,13 @@ R4
 w1715581982
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv
-!i122 1064
+!i122 1124
 R12
 R5
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC.sv|
 !i113 1
@@ -192,22 +192,22 @@ vPC_LUT
 R0
 R11
 !i10b 1
-!s100 CfdQWZY@zkPc54LZYkZ;H2
+!s100 ohjD2YjZGg`Daa11HlSMS3
 R2
-IQHZ01oK0C?XjjZGKeS[4H3
+IJ2=FaK[?H5FI>Z>ElJUi<3
 R3
 S1
 R4
-w1718323940
+w1718409406
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv
-!i122 1065
+!i122 1125
 L0 1 17
 R5
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/PC_LUT.sv|
 !i113 1
@@ -227,13 +227,13 @@ R4
 w1717106297
 8C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv
-!i122 1069
+!i122 1129
 L0 1 78
 R5
 r1
 !s85 0
 31
-Z13 !s108 1718324096.000000
+R10
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/PC and alu tb/PC_testbench.sv|
 !i113 1
@@ -253,13 +253,13 @@ R4
 w1716352142
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv
-!i122 1066
+!i122 1126
 L0 3 30
 R5
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/reg_file.sv|
 !i113 1
@@ -278,13 +278,13 @@ R4
 w1717543786
 8C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program2/test_bench2_new.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program2/test_bench2_new.sv
-!i122 1070
+!i122 1130
 L0 3 101
 R5
 r1
 !s85 0
 31
-R13
+R10
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program2/test_bench2_new.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program2/test_bench2_new.sv|
 !i113 1
@@ -292,24 +292,24 @@ R7
 R8
 vtop_level
 R0
-R11
+R9
 !i10b 1
-!s100 EzLCfm6`XJioc]n;Dz2?n2
+!s100 Ea>SH=12j8^z5Ra6`X1B:1
 R2
-IkKhY^h@h:=V3j;W9R]BS_1
+I@ejDKkAZNUjPiUPf7CZdX0
 R3
 S1
 R4
-w1718242828
+w1718409650
 8C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv
 FC:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv
-!i122 1067
+!i122 1127
 L0 2 110
 R5
 r1
 !s85 0
 31
-R10
+R13
 !s107 C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/y1499/OneDrive/Desktop/cse141l/code/top_level.sv|
 !i113 1

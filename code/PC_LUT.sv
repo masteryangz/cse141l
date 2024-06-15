@@ -6,11 +6,11 @@ module PC_LUT #(parameter D=12)(
     0: target = 2;  
     1: target = 8;//6;
 	2: target = 22;//k loop
-	3: target = -26;//back to k loop
-	4: target = 184;//171j loop
-	5: target = -186;//-173back to j loop
-	6: target = 216;//203i loop
-	7: target = -222;//-209back to i loop
+	3: target = -30;//-26back to k loop
+	4: target = 314;//184j loop
+	5: target = -316;//-173back to j loop
+	6: target = 346;//216i loop
+	7: target = -352;//-209back to i loop
 	default: target = 'b0;  // hold PC  
   endcase
 
