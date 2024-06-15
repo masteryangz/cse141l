@@ -22,53 +22,117 @@ xor r3 r5             #r3 = ~r3(j loop jump back to here)
 add r3 r6             #r3 = r3+1(-j)
 add r3 r7             #r3 = len(n)-j
 jmp r3 100            #for j in range(i+2, len(n))
-ld r0 110             #r0 = 6
-add r7 r0             #r7 = 70
-lw r0 r7              #r0 = mem[70](i)
+ld r0 111             #r0 = 7
+add r7 r0             #r7 = 71
+lw r3 r7              #r3 = mem[71](j)
+add r3 r6             #r3 = j+1
+lw r3 r3              #r3 = n[j+1]
+xor r3 r5             #r3 = ~r3
+add r3 r6             #r3 = r3+1(-n[j+1])
+jmp r3 000            #if -n[j+1] != 0
+ld r0 000             #r0 = 0(-n[j+1] carry out)
+pos r5 000            #else if -n[j+1] == 0
+ld r0 001             #r0 = 1(-n[j+1] carry out)
+lw r3 r7              #r3 = j
+lw r3 r3              #r3 = n[j]
+xor r3 r5             #r3 = ~r3
+add r3 r6             #r3 = r3+1(-n[j])
+add r3 r0             #r3 = -n[j] with -n[j+1] carry out
+add r7 r6             #r7 = 72
+sw r3 r7              #mem[72] = -n[j] with -n[j+1] carry out
+add r7 r5             #r7 = 71
+lw r3 r7              #r3 = j
+add r3 r6             #r3 = j+1
+lw r3 r3              #r3 = n[j+1]
+add r7 r5             #r7 = 70
+lw r2 r7              #r2 = i
+add r2 r6             #r2 = i+1
+lw r2 r2              #r2 = n[i+1]
+ld r0 000             #r0 = 0
+add r0 r2             #r0 = r2
+rst r0 001            #r0 = r0>>1
+add r0 r0             #r0 = r0+r0
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-{n[i+1][7:1],0})
+add r0 r2             #r0 = r0+r2(n[i+1][0])
+ld r4 000             #r4 = 0
+add r4 r3             #r4 = r3
+rst r4 001            #r4 = r4>>1
+add r4 r4             #r4 = r4+r4
+xor r4 r5             #r4 = ~r4
+add r4 r6             #r4 = r4+1(-{-n[j+1][7:1],0})
+add r4 r3             #r4 = r4+r3(-n[j+1][0])
+add r0 r4             #r0 = r0+r4(n[i+1][0]-n[j+1][0])
+rst r0 001            #r0 >>= 1(r0 = n[i+1]-n[j+1] last bit carry out)
+ld r4 000             #r4 = 0
+add r4 r2             #r4 = n[i+1]
+add r4 r3             #r4 = n[i+1]-n[j+1]
+add r7 r6             #r7 = 71
+add r7 r6             #r7 = 72
+add r7 r6             #r7 = 73
+sw r4 r7              #r4 = mem[73]
+add r7 r6             #r7 = 72
+rst r2 001            #r2 >>= 1
+rst r3 001            #r3 >>= 1
+add r0 r2             #r0 = r0+r2({0,n[i+1][7:1]}+last bit carry out)
+add r0 r3             #r0 = r0+r3({0,n[i+1][7:1]}+{0,-n[j+1][7:1]}+last bit carry out)
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1(r0 = n[i+1]-n[j+1] carry out)
+lw r3 r7              #r3 = -n[j] with -n[j+1] carry out
+add r7 r5             #r7 = 71
+add r7 r5             #r7 = 70
+lw r2 r7              #r2 = i
+lw r2 r2              #r2 = n[i]
+ld r4 000             #r4 = 0
+add r4 r0             #r4 = n[i+1]-n[j+1] carry out
+add r4 r2             #r4 = n[i] with n[i+1]-n[j+1] carry out
+add r4 r3             #r4 = n[i]-n[j] with n[i+1]-n[j+1] carry out
+add r7 r6             #r7 = 71
+add r7 r6             #r7 = 72
+add r7 r6             #r7 = 73
+add r7 r6             #r7 = 74
+sw r4 r7              #mem[74] = n[i+1]-n[j+1] carry out+n[i]-n[j]
+ld r1 000             #r1 = 0
+add r1 r2             #r1 = r2
+rst r1 001            #r1 = r1>>1
+add r1 r1             #r1 = r1+r1
+xor r1 r5             #r1 = ~r1
+add r1 r6             #r1 = r1+1(-{n[i][7:1],0})
+add r1 r2             #r1 = r1+r2(n[i][0])
+ld r4 000             #r4 = 0
+add r4 r3             #r4 = r3
+rst r4 001            #r4 = r4>>1
+add r4 r4             #r4 = r4+r4
+xor r4 r5             #r4 = ~r4
+add r4 r6             #r4 = r4+1(-{-n[j][7:1],0})
+add r4 r3             #r4 = r4+r3(-n[j][0])
+add r1 r4             #r1 = r1+r4(n[i][0]-n[j][0])
+add r0 r1             #r0 = r0+r1(n[i][0]-n[j][0]+(n[i+1]-n[j+1]) carry out)
+rst r0 001            #r0 >>= 1(r0 = n[i]-n[j] last bit carry out)
+rst r2 001            #r2 >>= 1
+rst r3 001            #r3 >>= 1
+add r0 r2             #r0 = r0+r2({0,n[i][7:1]}+last bit carry out)
+add r0 r3             #r0 = r0+r3({0,n[i][7:1]}+{0,-n[j][7:1]}+last bit carry out)
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1
+rst r0 001            #r0 >>=1(r0 = n[i]-n[j] carry out)
+
+jmp r0 001            #if n[i]-n[j] carry out == 1
+
+
 lw r0 r0              #r0 = n[i]
 add r7 r6             #r7 = 71
 lw r4 r7              #r4 = mem[71](j)
 lw r4 r4              #r4 = n[j]
-lw r3 r7              #r3 = mem[71](j)
-add r3 r6             #r3 = j+1
-lw r3 r3              #r3 = n[j+1]
-add r7 r5             #r7 = 70
-lw r2 r7              #r2 = mem[70](i)
-add r2 r6             #r2 = i+1
-lw r2 r2              #r2 = n[i+1]
-xor r0 r5             #r0 = ~r0
-pos r0 001            #if n[i] < 0{
-jmp r2 001            #    if n[i+1]!=0{
-ld r1 000             #        r1 = 0(-n[i+1] LSB carry out=0)
-xor r2 r5             #        r2(n[i+1]) = ~r2
-add r2 r6             #        r2 = r2+1(-n[i+1])
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-pos r5 000            #    }else if n[i+1]==0{
-ld r1 001             #        r1 = 1(-n[i+1] LSB carry out=1)}
-pos r5 000            #}else{
-xor r0 r5             #    r0 = ~r0}
-add r0 r1             #r0 = r0+r1(abs(n[i]))
-xor r4 r5             #r4 = ~r4
-pos r4 001            #if n[j] < 0{
-jmp r3 001            #    if n[j+1]!=0{
-ld r1 000             #        r1 = 0(-n[j+1] LSB carry out=0)
-xor r3 r5             #        r3(n[j+1]) = ~r3
-add r3 r6             #        r3 = r3+1(-n[j+1])
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-ld r6 001             #        nop
-pos r5 000            #    }else if n[j+1]==0{
-ld r1 001             #        r1 = 1(-n[j+1] LSB carry out=1)}
-pos r5 000            #}else{
-xor r4 r5             #    r4 = ~r4}
-add r4 r1             #r4 = r4+r1(abs(n[j]))
-add r0 r4             #r0 = r0+r4(abs(n[i])+abs(n[j]))
 add r7 r6             #r7 = 71
 add r7 r6             #r7 = 72
 sw r0 r7              #mem[72] = abs(n[i])+abs(n[j])
