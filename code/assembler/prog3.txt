@@ -1,4 +1,191 @@
-sw r7 r7              #mem[64] = 64
+sw r7 r7              #mem[64] = 64(setup phase starts)
+lw r1 r7              #r1 = 64
+ld r0 111             #r0 = 7
+add r0 r6             #r0 = 8
+add r0 r0             #r0 = 16
+sw r0 r7              #min(mem[64]) = 16
+add r7 r6             #r7 = 65
+sw r2 r7              #max(mem[65]) = 0
+add r7 r6             #r7 = 66
+sw r1 r7              #mem[66] = 64
+add r7 r6             #r7 = 67
+sw r2 r7              #mem[67] = r2(i=0)
+add r7 r6             #r7 = 68
+sw r3 r7              #mem[68] = r3(j=0)
+add r7 r6             #r7 = 69
+sw r3 r7              #mem[69] = r3(k=0)
+add r7 r5             #r7 = 68
+add r7 r5             #r7 = 67
+add r7 r5             #r7 = 66
+add r7 r5             #r7 = 65
+add r7 r5             #r7 = 64(setup phase ends)
+xor r2 r5             #r2 = ~r2(i loop jump back to here)
+add r2 r6             #r2 = r2+1(-i)
+add r7 r5             #r7 = len(n)-1
+add r7 r5             #r7 = len(n)-2
+add r2 r7             #r2 = len(n)-2-i
+add r7 r6             #r7 = len(n)-1
+add r7 r6             #r7 = len(n)
+jmp r2 110            #for i in range(len(n)-1)
+add r7 r6             #r7 = len(n)+1
+add r7 r6             #r7 = len(n)+2
+add r7 r6             #r7 = len(n)+3
+lw r2 r7              #r2 = mem[67](i)
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+ld r3 010             #r3 = 2
+add r3 r2             #r3(j) = r2(i)+2
+add r7 r6             #r7 = len(n)+1
+add r7 r6             #r7 = len(n)+2
+add r7 r6             #r7 = len(n)+3
+add r7 r6             #r7 = len(n)+4
+sw r3 r7              #mem[68](j) = r3
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+xor r3 r5             #r3 = ~r3(j loop jump back to here)
+add r3 r6             #r3 = r3+1(-j)
+add r3 r7             #r4 = len(n)-j
+jmp r3 100            #for j in range(i+2, len(n))
+add r7 r6             #r7 = len(n)+1
+add r7 r6             #r7 = len(n)+2
+add r7 r6             #r7 = len(n)+3
+lw r2 r7              #r2 = mem[67](i)
+add r7 r6             #r7 = len(n)+4
+lw r3 r7              #r3 = mem[68](j)
+lw r4 r2              #load mem[i] into r4
+lw r0 r3              #load mem[j] into r0
+xor r0 r4             #x(r0) = n[i]^n[j]
+add r7 r6             #r7 = len(n)+5
+lw r4 r7              #r4 = mem[69](k)
+add r7 r6             #r7 = len(n)+6
+sw r0 r7              #mem[70] = x(n[i]^n[j])
+ld r3 110             #r3 = 6
+xor r3 r5             #r3 = ~r3
+add r3 r6             #r3 = -6
+add r7 r3             #r7 = len(n)
+ld r3 000             #r3 = 0(setBits)
+ld r6 001             #nop(first k loop jump back to here)
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+xor r4 r5             #r4(k) = ~r4
+add r4 r6             #r4 = r4+1(-k)
+ld r1 111             #r1 = 7
+add r1 r6             #r1 = 8
+add r4 r1             #r4 = 8 - k
+jmp r4 010            #for k in range(8)(first k loop)
+ld r2 110             #r2 = 6
+add r7 r2             #r7 = len(n)+6
+lw r2 r7              #r2 = mem[70](x=n[i]^n[j])
+rst r2 001            #r2 = r2/2
+add r2 r2             #r2 = r2+r2
+xor r2 r5             #r2 = ~r2
+add r2 r6             #r2 = r2+1(-{x[15:1],0})
+add r2 r0             #r2 = r0+r2(x[0])
+add r3 r2             #setBits += x[0]
+rst r0 001            #r0(x) >>= 1
+sw r0 r7              #update x in mem
+add r7 r5             #r7 = len(n)+5
+lw r4 r7              #r4 = k
+add r4 r6             #k+=1
+sw r4 r7              #mem[69] = k
+add r7 r5             #r7 = len(n)+4
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+pos r5 011            #jump back to first k loop
+ld r0 111             #r0 = 7
+add r7 r0             #r7 = len(n)+7
+sw r3 r7              #mem[71] = r3(setBits)
+add r7 r5             #r7 = len(n)+6
+add r7 r5             #r7 = len(n)+5
+ld r4 000             #r4 = 0(k)
+sw r4 r7              #mem[69] = 0
+add r7 r5             #r7 = len(n)+4
+lw r3 r7              #r3 = mem[68](j)
+add r7 r5             #r7 = len(n)+3
+lw r2 r7              #r2 = mem[67](i)
+add r2 r6             #r2 = i+1
+lw r4 r2              #load mem[i+1] into r4
+add r3 r6             #r3 = j+1
+lw r0 r3              #load mem[j+1] into r0
+xor r0 r4             #x(r0) = n[i+1]^n[j+1]
+add r7 r6             #r7 = len(n)+4
+add r7 r6             #r7 = len(n)+5
+add r7 r6             #r7 = len(n)+6
+sw r0 r7              #mem[70] = x(n[i+1]^n[j+1])
+add r7 r6             #r7 = len(n)+7
+lw r3 r7              #r3 = mem[71](setBits)
+ld r4 111             #r4 = 7
+xor r4 r5             #r4 = ~r4
+add r4 r6             #r4 = -7
+add r7 r4             #r7 = len(n)
+ld r4 000             #r4 = 0(k)
+ld r6 001             #nop(second k loop jump back to here)
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+xor r4 r5             #r4(k) = ~r4
+add r4 r6             #r4 = r4+1(-r4)
+ld r1 111             #r1 = 7
+add r1 r6             #r1 = 8
+add r4 r1             #r4 = 8 - k
+jmp r4 010            #for k in range(8)(second k loop)
+ld r2 110             #r2 = 6
+add r7 r2             #r7 = len(n)+6
+lw r2 r7              #r2 = mem[70](x=n[i+1]^n[j+1])
+rst r2 001            #r2 = r2/2
+add r2 r2             #r2 = r2+r2
+xor r2 r5             #r2 = ~r2
+add r2 r6             #r2 = r2+1(-{x[15:1],0})
+add r2 r0             #r2 = r0+r2(x[0])
+add r3 r2             #setBits += x[0]
+rst r0 001            #r0(x) >>= 1
+sw r0 r7              #update x in mem
+add r7 r5             #r7 = len(n)+5
+lw r4 r7              #r4 = k
+add r4 r6             #k+=1
+sw r4 r7              #mem[69] = k
+add r7 r5             #r7 = len(n)+4
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+pos r5 011            #jump back to second k loop
+lw r0 r7              #r0 = mem[64](min)
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-min)
+add r0 r3             #r0 = setBits-min
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(min-setBits)
+pos r0 000            #if setBits < min
+sw r3 r7              #mem[64](max) = setBits
+add r7 r6             #r7 = len(n)+1
+lw r0 r7              #r0 = mem[65](max)
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-max)
+add r0 r3             #r0 = setBits-max
+pos r0 000            #if setBits > max
+sw r3 r7              #mem[65](max) = setBits
+ld r3 011             #r3 = 3
+add r7 r3             #r7 = len(n)+4
+lw r3 r7              #r3 = j
+add r3 r6             #j+=1
+add r3 r6             #j+=1
+sw r3 r7              #mem[68] = j
+add r7 r6             #r7 = len(n)+5
+ld r4 000             #r4 = 0(k)
+sw r4 r7              #mem[69] = 0
+add r7 r5             #r7 = len(n)+4
+add r7 r5             #r7 = len(n)+3
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+ld r6 001             #nopsw r7 r7              #mem[64] = 64
 lw r0 r7              #r0 = 64
 lw r1 r7              #r1 = 64
 sw r2 r7              #max(mem[64]) = 0
@@ -70,3 +257,133 @@ jmp r5 101            #jump back to j for loop
 add r2 r6             #i+=1
 add r2 r6             #i+=1
 jmp r5 111            #jump back to i for loop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+pos r5 101            #jump back to j for loop
+ld r2 011             #r2 = 3
+add r7 r2             #r7 = len(n)+3
+lw r2 r7              #r2 = i
+add r2 r6             #i+=1
+add r2 r6             #i+=1
+sw r2 r7              #mem[67] = i
+add r7 r5             #r7 = len(n)+2
+add r7 r5             #r7 = len(n)+1
+add r7 r5             #r7 = len(n)
+pos r5 111            #jump back to i for loop
+ld r0 000             #r0 = 0
+ld r1 000             #r1 = 0
+ld r2 000             #r2 = 0
+ld r3 000             #r3 = 0
+ld r4 000             #r4 = 0
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop

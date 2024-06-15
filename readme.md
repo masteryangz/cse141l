@@ -1,5 +1,6 @@
 # 141L Term Project
 
+### Detailed report is in the pdf file ```CSE_141L_Final_Report (1).pdf```
 
 
 ## Working Programs
