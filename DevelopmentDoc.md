@@ -1,8 +1,3 @@
-## 2024.5.21  
-
-## TODO:
-  1. need to test run machine codes
-  2. ALU needs carry out
 
 
 ISA size:
