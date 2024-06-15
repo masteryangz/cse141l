@@ -23,7 +23,7 @@ Instructions:
     -  load an intermediate to a reg
     -  e.g. `ld R3 111⇔ 000_011_111`
   - rst: 001
-    - by default left shift
+    - by default right shift
     -  e.g. `rst R0 101  ⇔ 001_000_101`
   - add: 010
     - e.g. `add R0, R1 ⇔ 010_000_001`

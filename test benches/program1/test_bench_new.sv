@@ -47,7 +47,7 @@ initial begin
           0: $readmemb("D:/cse141l/test_files/test0.txt", D1.dm.core);
   1: $readmemb("D:/cse141l/test_files/test1.txt", D1.dm.core);
   2: $readmemb("D:/cse141l/test_files/test2.txt", D1.dm.core);
-  3: $readmemb("D:/cse141l/test so_files/test3.txt", D1.dm.core);
+  3: $readmemb("D:/cse141l/test_files/test3.txt", D1.dm.core);
   4: $readmemb("D:/cse141l/test_files/test4.txt", D1.dm.core);
   5: $readmemb("D:/cse141l/test_files/test5.txt", D1.dm.core);
   6: $readmemb("D:/cse141l/test_files/test6.txt", D1.dm.core);
