@@ -1,4 +1,13 @@
 ld r6 001             #nop
+ld r0 111             #r0 = 7(setup phase starts)
+add r0 r0             #r0 = 14
+add r0 r5             #r0 = 13
+add r0 r5             #r0 = 12
+add r0 r5             #r0 = 11
+add r0 r7             #r0 = 75
+add r1 r7             #r1 = 64
+add r1 r1             #r1 = 8'b10000000
+sw r1 r0              #mem[75] = 8'b10000000(setup phase ends)
 xor r2 r5             #r2 = ~r2(i loop jump back to here)
 add r2 r6             #r2 = r2+1(-i)
 add r7 r5             #r7 = len(n)-1
@@ -27,16 +36,20 @@ add r7 r0             #r7 = 71
 lw r3 r7              #r3 = mem[71](j)
 add r3 r6             #r3 = j+1
 lw r3 r3              #r3 = n[j+1]
+jmp r3 001            #if n[j+1] != 0
+ld r0 000             #r0 = 0(-n[j+1] carry out)
 xor r3 r5             #r3 = ~r3
 add r3 r6             #r3 = r3+1(-n[j+1])
-jmp r3 000            #if -n[j+1] != 0
-ld r0 000             #r0 = 0(-n[j+1] carry out)
-pos r5 000            #else if -n[j+1] == 0
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+pos r5 000            #else if n[j+1] == 0
 ld r0 001             #r0 = 1(-n[j+1] carry out)
 lw r3 r7              #r3 = j
 lw r3 r3              #r3 = n[j]
 xor r3 r5             #r3 = ~r3
-add r3 r6             #r3 = r3+1(-n[j])
 add r3 r0             #r3 = -n[j] with -n[j+1] carry out
 add r7 r6             #r7 = 72
 sw r3 r7              #mem[72] = -n[j] with -n[j+1] carry out
@@ -44,6 +57,8 @@ add r7 r5             #r7 = 71
 lw r3 r7              #r3 = j
 add r3 r6             #r3 = j+1
 lw r3 r3              #r3 = n[j+1]
+xor r3 r5             #r3 = ~r3
+add r3 r6             #r3 = r3+1(-n[j+1])
 add r7 r5             #r7 = 70
 lw r2 r7              #r2 = i
 add r2 r6             #r2 = i+1
@@ -71,7 +86,6 @@ add r7 r6             #r7 = 71
 add r7 r6             #r7 = 72
 add r7 r6             #r7 = 73
 sw r4 r7              #r4 = mem[73]
-add r7 r6             #r7 = 72
 rst r2 001            #r2 >>= 1
 rst r3 001            #r3 >>= 1
 add r0 r2             #r0 = r0+r2({0,n[i+1][7:1]}+last bit carry out)
@@ -83,6 +97,7 @@ rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1(r0 = n[i+1]-n[j+1] carry out)
+add r7 r5             #r7 = 72
 lw r3 r7              #r3 = -n[j] with -n[j+1] carry out
 add r7 r5             #r7 = 71
 add r7 r5             #r7 = 70
@@ -114,10 +129,21 @@ add r4 r3             #r4 = r4+r3(-n[j][0])
 add r1 r4             #r1 = r1+r4(n[i][0]-n[j][0])
 add r0 r1             #r0 = r0+r1(n[i][0]-n[j][0]+(n[i+1]-n[j+1]) carry out)
 rst r0 001            #r0 >>= 1(r0 = n[i]-n[j] last bit carry out)
+ld r1 000             #r1 = 0
+add r7 r6             #r7 = 75
+pos r2 000            #if n[i] >= 0{}
+pos r5 000            #if n[i] < 0{
+lw r1 r7              #r1 = 8'b10000000}
 rst r2 001            #r2 >>= 1
+add r2 r1             #r2 = arithmetic right shift by 1
+ld r1 000             #r1 = 0
+pos r3 000            #if n[j] >= 0{}
+pos r5 000            #if n[j] < 0{
+lw r1 r7              #r1 = 8'b10000000}
 rst r3 001            #r3 >>= 1
-add r0 r2             #r0 = r0+r2({0,n[i][7:1]}+last bit carry out)
-add r0 r3             #r0 = r0+r3({0,n[i][7:1]}+{0,-n[j][7:1]}+last bit carry out)
+add r3 r1             #r3 = arithmetic right shift by 1
+add r0 r2             #r0 = r0+r2({n[i][7:1]}+last bit carry out)
+add r0 r3             #r0 = r0+r3({n[i][7:1]}+{-n[j][7:1]}+last bit carry out)
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
@@ -125,162 +151,164 @@ rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1
 rst r0 001            #r0 >>=1(r0 = n[i]-n[j] carry out)
-
-jmp r0 001            #if n[i]-n[j] carry out == 1
-
-
-lw r0 r0              #r0 = n[i]
-add r7 r6             #r7 = 71
-lw r4 r7              #r4 = mem[71](j)
-lw r4 r4              #r4 = n[j]
-add r7 r6             #r7 = 71
-add r7 r6             #r7 = 72
-sw r0 r7              #mem[72] = abs(n[i])+abs(n[j])
-add r7 r6             #r7 = 73
-sw r2 r7              #mem[73] = abs(n[i+1])
-add r7 r6             #r7 = 74
-sw r3 r7              #mem[74] = abs(n[j+1])
-ld r0 000             #r0 = 0
-add r0 r2             #r0 = r2
-rst r0 001            #r0 = r0>>1
-add r0 r0             #r0 = r0+r0
-xor r0 r5             #r0 = ~r0
-add r0 r6             #r0 = r0+1(-{n[i+1][7:1],0})
-add r0 r2             #r0 = r0+r2(n[i+1][0])
-ld r4 000             #r4 = 0
-add r4 r3             #r4 = r3
-rst r4 001            #r4 = r4>>1
-add r4 r4             #r4 = r4+r4
-xor r4 r5             #r4 = ~r4
-add r4 r6             #r4 = r4+1(-{-n[j+1][7:1],0})
-add r4 r3             #r4 = r4+r3(-n[j+1][0])
-add r0 r4             #r0 = r0+r4(n[i+1][0]-n[j+1][0])
-rst r0 001            #r0 >>= 1(r0 = n[i+1]-n[j+1] last bit carry out)
-rst r2 001            #r2 >>= 1
-rst r3 001            #r3 >>= 1
-add r0 r2             #r0 = r0+r2({0,n[i+1][7:1]}+last bit carry out)
-add r0 r3             #r0 = r0+r3({0,n[i+1][7:1]}+{0,-n[j+1][7:1]}+last bit carry out)
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1
-rst r0 001            #r0 >>=1(r0 = n[i+1]-n[j+1] LSB carry out)
+add r7 r5             #r7 = 74
+lw r2 r7              #r2 = n[i]-n[j] with carry out
 add r7 r5             #r7 = 73
-add r7 r5             #r7 = 72
-lw r1 r7              #r1 = mem[72](abs(n[i])+abs(n[j]))
-add r1 r0             #r1 = r1+r0(abs(n[i])+abs(n[j]) with n[i+1]-n[j+1] LSB carry out)
-sw r1 r7              #mem[72] = abs(n[i])+abs(n[j]) with n[i+1]-n[j+1] LSB carry out
-add r7 r6             #r7 = 73
-lw r2 r7              #r2 = mem[73](abs(n[i+1]))
-add r7 r6             #r7 = 74
-lw r3 r7              #r3 = mem[74](abs(n[j+1]))
-add r2 r3             #r2 = r2+r3(abs(n[i+1])+abs(j+1))
-ld r4 000             #r4 = 0
-add r4 r7             #r4 = 74
-add r4 r6             #r4(k) = 75
-add r7 r5             #r7 = 73
-sw r2 r7              #mem[73] = abs(n[i+1])+abs(j+1)
-add r7 r5             #r7 = 72
-lw r0 r7              #r0 = mem[72](abs(n[i])+abs(n[j]))
+lw r3 r7              #r3 = n[i+1]-n[j+1]
+jmp r0 010            #if n[i]-n[j] carry out == 1{
+jmp r3 001            #  if n[i+1]-n[j+1] != 0{
+ld r1 000             #    r1 = 0(-(n[i+1]-n[j+1]) carry out)
+xor r3 r5             #    r3 = ~r3
+add r3 r6             #    r3 = r3+1(abs(n[i+1]-n[j+1]))
+sw r3 r7              #    mem[73] = abs(n[i+1]-n[j+1])
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+pos r5 000            #  }else if n[i+1]-n[j+1] == 0{
+ld r1 001             #    r1 = 1(-(n[i+1]-n[j+1]) carry out)}
+add r7 r6             #  r7 = 74
+xor r2 r5             #  r2 = ~r2
+add r2 r1             #  r2 = abs(n[i]-n[j]) with -(n[i+1]-n[j+1]) carry out
+sw r2 r7              #  mem[74] = abs(n[i]-n[j]) with -(n[i+1]-n[j+1]) carry out}
+add r7 r5             #  r7 = 73
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+lw r2 r7              #r2 = abs(n[i+1]-n[j+1])
 ld r1 110             #r1 = 6
 xor r1 r5             #r1 = ~r1
 add r1 r6             #r1 = r1+1(-6)
-add r7 r1             #r7 = 66
-lw r1 r7              #r1 = mem[66](minMSB)
-ld r3 111             #r3 = 7(first k loop jump back to here)
-add r3 r7             #r3 = 73
-add r3 r6             #r3 = 74
-add r3 r6             #r3 = 75
-ld r2 111             #r2 = 7
-add r2 r6             #r2 = 8
-add r2 r2             #r2 = 16
-add r2 r0             #r2 = 75+16 = 91
-xor r2 r5             #r2 = ~r1
-add r2 r6             #r2 = r1+1(-91)
-add r2 r4             #r2 = k-91
-jmp r2 001            #for k in range(16)(first k loop){
-ld r2 000             #    r2 = 0
-add r2 r0             #    r2 = abs(n[i+1])+abs(n[j+1])
-rst r2 001            #    r2 = r2/2
-add r2 r2             #    r2 = r2+r2
-xor r2 r5             #    r2 = ~r2
-add r2 r6             #    r2 = r2+1(-{abs(n[i+1])+abs(n[j+1])[7:1],0})
-add r2 r0             #    r2 = r0+r2(abs(n[i+1]-n[j+1])[0])
-sw r2 r4              #    mem[k] = abs(n[i+1])+abs(n[j+1])[0]
-rst r2 001            #    r0 >>= 1
+add r7 r1             #r7 = 67
+lw r1 r7              #r1 = mem[67](minLSB)
+ld r4 111             #r4 = 7
+add r4 r7             #r4 = 74
+add r4 r6             #r4 = 75
+add r4 r6             #r4 = 76(k)
+ld r3 111             #r3 = 7
+add r3 r6             #r3 = 8
+add r3 r3             #r3 = 16
+add r3 r4             #r3 = 76+16 = 92
+ld r6 001             #nop(first k loop jump back to here(store abs(n[i+1]-n[j+1]) and minLSB))
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r0 000             #r0 = 0
+add r0 r3             #r0 = 92
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-92)
+add r0 r4             #r0 = k-92
+jmp r0 010            #for k in range(16)(store abs(n[i+1]-n[j+1]) and minLSB){
+ld r0 000             #    r0 = 0
+add r0 r2             #    r0 = abs(n[i]+n[j])
+rst r0 001            #    r0 = r0/2
+add r0 r0             #    r0 = r0+r0
+xor r0 r5             #    r0 = ~r0
+add r0 r6             #    r0 = r0+1(-{abs(n[i]-n[j])[7:1],0})
+add r0 r2             #    r0 = r0+r2(abs(n[i]-n[j])[0])
+sw r0 r4              #    mem[k] = abs(n[i]-n[j])[0]
+rst r2 001            #    r2 >>= 1
 add r4 r6             #    k+=1
-ld r2 000             #    r2 = 0
-add r2 r3             #    r2 = minMSB
-rst r2 001            #    r2 = r2/2
-add r2 r2             #    r2 = r2+r2
-xor r2 r5             #    r2 = ~r2
-add r2 r6             #    r2 = r2+1(-{minMSB[7:1],0})
-add r2 r1             #    r2 = r1+r2(minMSB[0])
+ld r0 000             #    r0 = 0
+add r0 r1             #    r0 = minMSB
+rst r0 001            #    r0 = r0/2
+add r0 r0             #    r0 = r0+r0
+xor r0 r5             #    r0 = ~r0
+add r0 r6             #    r0 = r0+1(-{minMSB[7:1],0})
+add r0 r1             #    r0 = r0+r1(minMSB[0])
 sw r0 r4              #    mem[k] = minMSB[0]
 rst r1 001            #    r1 >>= 1
 add r4 r6             #    k+=1
 pos r5 011            #    jump back to first k loop}
-ld r6 001             #nop(second k loop jump back to here)
-ld r6 001             #nop
-ld r6 001             #nop
-ld r6 001             #nop
-ld r3 110             #r3 = 6
-add r3 r7             #r3 = 72
-lw r1 r7              #r1 = mem[72](abs(n[i])+abs(j))
-add r3 r6             #r3 = 73
-lw r0 r3              #r0 = mem[73](abs(n[i+1])+abs(n[j+1]))
-add r3 r6             #r3 = 74
-add r3 r6             #r3 = 75
-xor r3 r5             #r3 = ~r2
-add r3 r6             #r3 = r3+1(-75)
-add r3 r4             #r3 = k-75
-jmp r3 011            #for k in range(16)(second k loop){
-ld r2 000             #    r2 = 0
-ld r3 000             #    r3 = 0
-lw r2 r4              #    r2 = mem[k](minMSB[7])
-add r4 r5             #    k-=1
-lw r3 r4              #    r3 = mem[k](abs(n[i])+abs(n[j])[7])
-add r4 r5             #    k-=1
-jmp r2 000            #    if (minMSB[7]) == 1{
-jmp r3 000            #        if abs(n[i])+abs(n[j])[7] == 1{
-pos r5 010            #        }else if abs(n[i+1])+abs(n[j+1][7]==0){
-sw r0 r7              #            mem[66] = abs(n[i+1])+abs(n[j+1])(update minMSB)
-add r7 r6             #            r7 = 67
-sw r1 r7              #            mem[67] = abs(n[i])+abs(n[j])(update minLSB)
-pos r5 001            #    }else if minMSB[7] == 0{
-jmp r3 000            #        if abs(n[i])+abs(n[j])[7] == 1{
-pos r5 000            #            break}
-pos r5 011            #jump back to second k loop}}
-ld r6 001             #nop}
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
-pos r1 001            #if abs(n[i])+abs(n[j]) < minMSB{
-sw r0 r7              #    mem[66](minMSB) = r0(update minMSB)
-add r7 r6             #    r7 = 67
-sw r2 r7              #    mem[67](minLSB) = r2(update minLSB)
-add r7 r5             #    r7 = 66
-pos r5 010            #}else if abs(n[i]-n[j]) == minMSB{
-add r7 r6             #    r7 = 67
-lw r3 r7              #    r3 = minLSB}
-add r7 r6             #r7 = 67
-add r7 r6             #r7 = 68
-lw r1 r7              #r1 = mem[68](maxMSB)
-add r7 r6             #r7 = 69
-lw r3 r7              #r3 = mem[69](maxLSB)
-ld r0 100             #r0 = 4
-add r0 r7             #r0 = 73
-lw r0 r0              #r0 = mem[73](abs(n[i]-n[j]))
-add r7 r5             #r7 = 68
-add r7 r5             #r7 = 67
 add r7 r5             #r7 = 66
+lw r1 r7              #r1 = minMSB
+ld r6 001             #nop(second k loop jump back to here(store abs(n[i]-n[j]) and minMSB))
+ld r6 001             #nop
+ld r0 111             #r0 = 7
+add r0 r6             #r0 = 8
+add r0 r0             #r0 = 16
+add r0 r3             #r0 = 92+16 = 108
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-108)
+add r0 r4             #r0 = k-108
+jmp r0 010            #for k in range(16)(store abs(n[i]-n[j]) and minMSB){
+ld r0 000             #    r0 = 0
+add r0 r2             #    r0 = abs(n[i]+n[j])
+rst r0 001            #    r0 = r0/2
+add r0 r0             #    r0 = r0+r0
+xor r0 r5             #    r0 = ~r0
+add r0 r6             #    r0 = r0+1(-{abs(n[i]-n[j])[7:1],0})
+add r0 r2             #    r0 = r0+r2(abs(n[i]-n[j])[0])
+sw r0 r4              #    mem[k] = abs(n[i]-n[j])[0]
+rst r2 001            #    r2 >>= 1
+add r4 r6             #    k+=1
+ld r0 000             #    r0 = 0
+add r0 r1             #    r0 = minMSB
+rst r0 001            #    r0 = r0/2
+add r0 r0             #    r0 = r0+r0
+xor r0 r5             #    r0 = ~r0
+add r0 r6             #    r0 = r0+1(-{minMSB[7:1],0})
+add r0 r1             #    r0 = r0+r1(minMSB[0])
+sw r0 r4              #    mem[k] = minMSB[0]
+rst r1 001            #    r1 >>= 1
+add r4 r6             #    k+=1
+pos r5 011            #    jump back to second k loop}
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r1 111             #r1 = 7
+add r1 r6             #r1 = 8
+add r1 r1             #r1 = 16
 xor r1 r5             #r1 = ~r1
-add r1 r6             #r1 = r1+1(-maxMSB)
-add r1 r0             #r1 = r0-maxMSB
-jmp r1 010            #if abs(n[i]-n[j]) != maxMSB{
+add r1 r6             #r1 = r1+1(-16)
+ld r0 111             #r0 = 7
+add r0 r6             #r0 = 8
+add r7 r0             #r7 = 74
+lw r2 r1              #r2 = abs(n[i]-n[j])
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = -8
+add r7 r6             #r7 = 66
+add r1 r4             #r1 = 92
+ld r6 001             #nop(third k loop jump back to here)
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r0 000             #r0 = 0
+add r0 r1             #r0 = 92
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-92)
+add r0 r4             #r0 = k-92
+jmp r0 010            #for k in range(16)(third k loop(compare abs(n[i]-n[j]) and minMSB)){
+ld r0 000             #    r0 = 0
+ld r3 000             #    r3 = 0
+add r4 r5             #    k-=1
+lw r0 r4              #    r0 = mem[k](minMSB[7])
+add r4 r5             #    k-=1
+lw r3 r4              #    r3 = mem[k](abs(n[i]-n[j])[7])
+jmp r0 001            #    if (minMSB[7]) == 1{
+jmp r3 000            #        if abs(n[i]-n[j][7]) == 1{continue
+pos r5 001            #        }else if abs(n[i+1]-n[j+1])[7]==0{
+pos r5 001            #            update then break
+pos r5 001            #    }else if minMSB[7] == 0{
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+jmp r3 000            #        if abs(n[i])+n[j][7] == 1{
+pos r5 000            #            break}
+pos r5 011            #jump back to third k loop}}}
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
@@ -292,83 +320,82 @@ ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
+pos r5 001            #break
+sw r2 r7              #mem[66] = abs(n[i+1]-n[j+1])(update minMSB)
+ld r2 111             #r3 = 7
+add r7 r2             #r7 = 73
+lw r3 r7              #r3 = abs(n[i+1]-n[j+1])
+xor r2 r5             #r2 = ~r2
+add r2 r6             #r2 = -7
+add r7 r2             #r7 = 66
+add r7 r6             #r7 = 67
+sw r3 r7              #mem[67] = abs(n[i]-n[j])(update minLSB)
 ld r6 001             #nop
-pos r1 001            #    if abs(n[i]-n[j]) < minMSB{
-sw r0 r7              #        mem[66](minMSB) = r0(update minMSB)
-add r7 r6             #        r7 = 67
-sw r2 r7              #        mem[67](minLSB) = r2(update minLSB)
-add r7 r5             #        r7 = 66}
-ld r6 001             #nop
-ld r6 001             #nop
-ld r6 001             #nop
-pos r5 010            #}else if abs(n[i]-n[j]) == minMSB{
-add r7 r6             #    r7 = 67
-lw r3 r7              #    r3 = minLSB
-ld r0 111             #    r0 = 7(first k loop jump back to here)
-add r0 r7             #    r0 = 74
-ld r1 111             #    r1 = 7
-add r1 r6             #    r1 = 8
-add r1 r1             #    r1 = 16
-add r1 r0             #    r1 = 74+16 = 90
-xor r1 r5             #    r1 = ~r1
-add r1 r6             #    r1 = r1+1(-90)
-add r1 r4             #    r1 = k-90
-jmp r1 001            #    for k in range(16)(first k loop){
-ld r0 000             #        r0 = 0
-add r0 r2             #        r0 = abs(n[i+1]-n[j+1])
-rst r0 001            #        r0 = r0/2
-add r0 r0             #        r0 = r0+r0
-xor r0 r5             #        r0 = ~r0
-add r0 r6             #        r0 = r0+1(-{abs(n[i+1]-n[j+1])[15:1],0})
-add r0 r2             #        r0 = r0+r2(abs(n[i+1]-n[j+1])[0])
-sw r0 r4              #        mem[k] = abs(n[i+1]-n[j+1])[0]
-rst r2 001            #        r2 >>= 1
-add r4 r6             #        k+=1
-ld r0 000             #        r0 = 0
-add r0 r3             #        r0 = minLSB
-rst r0 001            #        r0 = r0/2
-add r0 r0             #        r0 = r0+r0
-xor r0 r5             #        r0 = ~r0
-add r0 r6             #        r0 = r0+1(-{maxLSB[15:1],0})
-add r0 r3             #        r0 = r0+r3(maxLSB[0])
-sw r0 r4              #        mem[k] = maxLSB[0]
-rst r3 001            #        r3 >>= 1
-add r4 r6             #        k+=1
-pos r5 011            #        jump back to first k loop}
-ld r6 001             #nop(second k loop jump back to here)
+ld r1 111             #r1 = 7
+add r1 r6             #r1 = 8
+add r1 r1             #r1 = 16
+xor r1 r5             #r1 = ~r1
+add r1 r6             #r1 = r1+1(-16)
+ld r0 111             #r0 = 7
+add r0 r6             #r0 = 8
+add r7 r0             #r7 = 74
+lw r2 r1              #r2 = abs(n[i]-n[j])
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = -8
+add r7 r6             #r7 = 66
+add r1 r4             #r1 = 92
+ld r6 001             #nop(fourth k loop jump back to here)
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
-ld r1 111             #    r1 = 7
-add r1 r6             #    r1 = 8
-add r1 r1             #    r1 = 16
-xor r1 r5             #    r1 = ~r1
-add r1 r6             #    r1 = r1+1(-16)
-add r1 r0             #    r1 = 90-16 = 74
-xor r1 r5             #    r1 = ~r1
-add r1 r6             #    r1 = r1+1(-74)
-add r1 r4             #    r1 = k-74
-jmp r1 011            #    for k in range(16)(second k loop){
-ld r2 000             #        r2 = 0
-ld r3 000             #        r3 = 0
-lw r2 r4              #        r2 = mem[k](maxLSB[7])
-add r4 r5             #        k-=1
-lw r3 r4              #        r3 = mem[k](abs(n[i+1]-n[j+1])[7])
-add r4 r5             #        k-=1
-jmp r3 000            #        if abs(n[i+1]-n[j+1])[7] == 1{
-jmp r2 001            #            if maxLSB[7] == 1{
-pos r5 001            #            }else if maxLSB[7]==0{
-ld r6 001             #                nop
-ld r1 101             #                r1 = 5
-add r1 r7             #                r1 = 72
-lw r1 r1              #                r1 = mem[72](abs(n[i+1]-n[j+1]))
-sw r1 r7              #                mem[67] = abs(n[i+1]-n[j+1])(update minLSB)
-pos r5 000            #                break}
-ld r6 001             #        nop}
-pos r5 011            #jump back to second k loop}}
+ld r6 001             #nop
+ld r6 001             #nop
+ld r0 000             #r0 = 0
+add r0 r1             #r0 = 92
+xor r0 r5             #r0 = ~r0
+add r0 r6             #r0 = r0+1(-92)
+add r0 r4             #r0 = k-92
+jmp r0 010            #for k in range(16)(fourth k loop(compare abs(n[i+1]-n[j+1]) and minLSB)){
+ld r0 000             #    r0 = 0
+ld r3 000             #    r3 = 0
+add r4 r5             #    k-=1
+lw r0 r4              #    r0 = mem[k](minMSB[7])
+add r4 r5             #    k-=1
+lw r3 r4              #    r3 = mem[k](abs(n[i]-n[j])[7])
+jmp r0 001            #    if (minMSB[7]) == 1{
+jmp r3 000            #        if abs(n[i]-n[j][7]) == 1{continue
+pos r5 001            #        }else if abs(n[i+1]-n[j+1])[7]==0{
+pos r5 001            #            update then break
+pos r5 001            #    }else if minMSB[7] == 0{
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+jmp r3 000            #        if abs(n[i])+n[j][7] == 1{
+pos r5 000            #            break}
+pos r5 011            #jump back to third k loop}}}
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+pos r5 001            #break
+sw r2 r7              #mem[66] = abs(n[i+1]-n[j+1])(update minMSB)
+ld r2 111             #r3 = 7
+add r7 r2             #r7 = 73
+lw r3 r7              #r3 = abs(n[i+1]-n[j+1])
+xor r2 r5             #r2 = ~r2
+add r2 r6             #r2 = -7
+add r7 r2             #r7 = 66
+add r7 r6             #r7 = 67
+sw r3 r7              #mem[67] = abs(n[i]-n[j])(update minLSB)
 ld r6 001             #nop
 ld r3 100             #r3 = 4
 add r7 r3             #r7 = 71
@@ -403,6 +430,18 @@ ld r1 000             #r1 = 0
 ld r2 000             #r2 = 0
 ld r3 000             #r3 = 0
 ld r4 000             #r4 = 0
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
+ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop

@@ -4,7 +4,7 @@ module PC_LUT #(parameter D=12)(
 
   always_comb case(how_high)
     0: target = 2;  
-    1: target = 8;//6;
+    1: target = 10;//6;
 	2: target = 22;//k loop
 	3: target = -30;//-26back to k loop
 	4: target = 314;//184j loop
