@@ -1,3 +1,4 @@
+ld r6 001             #nop
 sw r7 r7              #mem[64] = 64(setup phase starts)
 lw r1 r7              #r1 = 64
 ld r0 111             #r0 = 7
@@ -377,7 +378,6 @@ ld r1 000             #r1 = 0
 ld r2 000             #r2 = 0
 ld r3 000             #r3 = 0
 ld r4 000             #r4 = 0
-ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop
 ld r6 001             #nop

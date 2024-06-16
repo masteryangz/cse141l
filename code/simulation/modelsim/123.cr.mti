@@ -33,20 +33,6 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	alu
 
-} {} {}} {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench_new.sv} {1 {vlog -work work -sv -stats=none {C:/Users/y1499/OneDrive/Desktop/cse141l/test benches/program1/test_bench_new.sv}
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module test_bench
-
-Top level modules:
-	test_bench
-
-} {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/instr_ROM.sv
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module instr_ROM
-
-Top level modules:
-	instr_ROM
-
 } {} {}} C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv {1 {vlog -work work -sv -stats=none C:/Users/y1499/OneDrive/Desktop/cse141l/code/nexPC.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module nextPC
