@@ -36,16 +36,27 @@ initial begin
 	Min = 'hffff;						     // start test bench Min at max value
 	Max = 'h0;						         // start test bench Max at min value
     case(loop_ct)
-        0: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test0.txt",D1.dm.core);
-	    1: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test1.txt",D1.dm.core);
-        2: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test2.txt",D1.dm.core);
-	    3: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test3.txt",D1.dm.core);
-        4: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test4.txt",D1.dm.core);
-        5: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test5.txt",D1.dm.core);
-        6: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test6.txt",D1.dm.core);
-	    7: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test7.txt",D1.dm.core);
-        8: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test8.txt",D1.dm.core);
-        9: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test9.txt",D1.dm.core);
+      //   0: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test0.txt",D1.dm.core);
+	    // 1: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test1.txt",D1.dm.core);
+      //   2: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test2.txt",D1.dm.core);
+	    // 3: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test3.txt",D1.dm.core);
+      //   4: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test4.txt",D1.dm.core);
+      //   5: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test5.txt",D1.dm.core);
+      //   6: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test6.txt",D1.dm.core);
+	    // 7: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test7.txt",D1.dm.core);
+      //   8: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test8.txt",D1.dm.core);
+      //   9: $readmemb("C:/Users/y1499/OneDrive/Desktop/cse141l/test_files/test9.txt",D1.dm.core);
+
+          0: $readmemb("D:/cse141l/test_files/test0.txt", D1.dm.core);
+  1: $readmemb("D:/cse141l/test_files/test1.txt", D1.dm.core);
+  2: $readmemb("D:/cse141l/test_files/test2.txt", D1.dm.core);
+  3: $readmemb("D:/cse141l/test_files/test3.txt", D1.dm.core);
+  4: $readmemb("D:/cse141l/test_files/test4.txt", D1.dm.core);
+  5: $readmemb("D:/cse141l/test_files/test5.txt", D1.dm.core);
+  6: $readmemb("D:/cse141l/test_files/test6.txt", D1.dm.core);
+  7: $readmemb("D:/cse141l/test_files/test7.txt", D1.dm.core);
+  8: $readmemb("D:/cse141l/test_files/test8.txt", D1.dm.core);
+  9: $readmemb("D:/cse141l/test_files/test9.txt", D1.dm.core);
     endcase
     for(int i=0; i<32; i++) begin
       Tmp[i] = {D1.dm.core[2*i],D1.dm.core[2*i+1]};	  // load values into mem, copy to Tmp array
